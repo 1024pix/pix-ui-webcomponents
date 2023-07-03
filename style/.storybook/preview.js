@@ -11,6 +11,13 @@ const preview = {
         date: /Date$/,
       },
     },
+    themes: {
+      default: 'basic',
+      list: [
+        { name: 'basic', color: '#3d68ff' },
+        { name: 'test', class: 'pix-theme-test', color: 'gold' },
+      ],
+    },
   },
 };
 

@@ -1,26 +1,23 @@
-
-// More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction
 export default {
-  title: 'Example/Button',
-  tags: ['autodocs'],
+  title: "Button",
   render: ({ label, ...args }) => {
     // You can either use a function to create DOM elements or use a plain html string!
     // return `<div>${label}</div>`;
-    return ` <button
-    type="button"
-    class="pix-button"
-  >
-    Pix Button
-  </button>`
+    return `<button
+      type="button"
+      class="pix-button pix-button--shape-squircle pix-button--size-big pix-button--background-blue"
+    >
+      ${label}
+    </button>`;
   },
   argTypes: {
-    backgroundColor: { control: 'color' },
-    label: { control: 'text' },
-    onClick: { action: 'onClick' },
-    primary: { control: 'boolean' },
+    backgroundColor: { control: "color" },
+    label: { control: "text" },
+    onClick: { action: "onClick" },
+    primary: { control: "boolean" },
     size: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
     },
   },
 };
@@ -29,26 +26,26 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: 'Button',
+    label: "Button",
   },
 };
 
 export const Secondary = {
   args: {
-    label: 'Button',
+    label: "Button",
   },
 };
 
 export const Large = {
   args: {
-    size: 'large',
-    label: 'Button',
+    size: "large",
+    label: "Button",
   },
 };
 
 export const Small = {
   args: {
-    size: 'small',
-    label: 'Button',
+    size: "small",
+    label: "Button",
   },
 };

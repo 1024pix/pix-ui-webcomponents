@@ -1,0 +1,70 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as ButtonStories from "./Button.stories";
+
+<Meta of={ButtonStories} />
+
+# Pix Button
+
+## Default
+
+Le bouton par défaut qui empêche les clics multiples.
+
+<Canvas of={ButtonStories.Primary} />
+
+```html
+<button
+  type="button"
+  class="pix-button pix-button--shape-squircle pix-button--size-big pix-button--background-blue"
+>
+  Button label
+</button>
+```
+
+## Borders
+
+Le bouton avec bordures et fond transparent
+
+```html
+<button
+  type="button"
+  class="pix-button pix-button--background-transparent-light pix-button--border pix-button--shape-squircle pix-button--size-big"
+>
+  Button label
+</button>
+```
+
+## Colors
+
+Le bouton avec toutes ses variations de couleur
+
+## Icons
+
+Le bouton avec des icônes `font-awesome` à afficher avant (`@iconBefore`) ou après (`@iconAfter`) le label.
+
+> ℹ️ Accessibilité : dans le cas où les icônes ont une valeur d'information (ex:&nbsp;un bouton `⬅️ Précédent`), il est important d'apporter un aria-label au bouton (ex:&nbsp;"Retour à la page précédente").
+
+## Disabled
+
+Le bouton désactivé
+
+## Link
+
+Fonctionnalité dépréciée dans `<PixButton />`.
+
+Utiliser le composant `<PixButtonLink />` à la place.
+
+## Loader
+
+Le bouton avec loader.
+Le loader peut être affiché de deux façons :
+
+- En passant une promesse dans l'attribut `@triggerAction`
+- En passant directement l'attribut `@isLoading={{true}}`
+
+## Shape
+
+Le bouton rounded
+
+## Size
+
+Le bouton en small
