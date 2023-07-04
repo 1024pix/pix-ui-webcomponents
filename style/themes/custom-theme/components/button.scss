@@ -1,0 +1,14 @@
+@at-root .pix-button {
+  background-color: var(--pix-color-primary);
+  color: var(--pix-color-neutral-0);
+  border: 1px solid var(--pix-color-primary);
+  box-shadow: 0 3px var(--pix-color-secondary);
+  font-size: 1.25rem;
+  padding: 16px 48px;
+  border-radius: 30px;
+
+  &:hover,
+  &:focus {
+    background-color: var(--pix-color-secondary);
+  }
+}

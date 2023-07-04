@@ -1,9 +1,2 @@
-@import "./design-tokens";
-
-// Themes
-.pix-theme-test {
-    @import "./themes/custom-theme/colors.css";
-}
-
-// Components
-@import "./components";
+@import "./themes/pix-theme-default.scss";
+@import "./themes/pix-theme-pluto.scss";

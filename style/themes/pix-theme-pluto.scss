@@ -1,0 +1,6 @@
+@import "./pix-theme-default.scss";
+
+.pix-theme-pluto {
+  @import "./custom-theme/design-tokens/colors.scss";
+  @import "./custom-theme/components/button.scss";
+}

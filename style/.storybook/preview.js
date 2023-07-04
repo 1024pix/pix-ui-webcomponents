@@ -1,6 +1,6 @@
 /** @type { import('@storybook/html').Preview } */
 
-import '../style.scss';
+import "../style.scss";
 
 const preview = {
   parameters: {
@@ -12,10 +12,10 @@ const preview = {
       },
     },
     themes: {
-      default: 'basic',
+      default: "basic",
       list: [
-        { name: 'basic', color: '#3d68ff' },
-        { name: 'test', class: 'pix-theme-test', color: 'gold' },
+        { name: "basic", color: "gold" },
+        { name: "test", class: "pix-theme-pluto", color: "#556bcc" },
       ],
     },
   },
