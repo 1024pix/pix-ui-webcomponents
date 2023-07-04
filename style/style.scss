@@ -1,13 +1,9 @@
-@import "./design-tokens/breakpoints.scss";
-@import "./design-tokens/colors.scss";
-@import "./design-tokens/fonts.scss";
-@import "./design-tokens/form.scss";
-@import "./design-tokens/shadows.scss";
-@import "./design-tokens/spacing.scss";
-@import "./design-tokens/typography.scss";
+@import "./design-tokens";
 
 // Themes
-@import "./themes/test/design-tokens/colors.css";
+.pix-theme-test {
+    @import "./themes/custom-theme/colors.css";
+}
 
 // Components
-@import "./components/button.scss";
+@import "./components";
