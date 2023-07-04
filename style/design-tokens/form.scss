@@ -1,0 +1,98 @@
+@mixin hoverFormElement() {
+  &:hover {
+    box-shadow: inset 0 0 0 0.6px --pix-color-neutral-70;
+    background-color: --pix-color-neutral-5;
+  }
+}
+
+@mixin hoverFormElementDisabled() {
+  &:hover {
+    box-shadow: inset 0 0 0 0.6px --pix-color-neutral-70;
+    background-color: --pix-color-neutral-20;
+  }
+}
+
+@mixin formElementDisabled() {
+  background-color: --pix-color-neutral-20;
+}
+
+@mixin focusFormElement() {
+  &:focus {
+    border-color: --pix-color-primary;
+    box-shadow: inset 0 0 0 0.6px --pix-color-primary;
+    outline: none;
+  }
+}
+
+@mixin focusWithinFormElement() {
+  &:focus-within {
+    border-color: --pix-color-primary;
+    box-shadow: inset 0 0 0 0.6px --pix-color-primary;
+    outline: none;
+  }
+}
+
+@mixin label() {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: --pix-color-neutral-90;
+  margin-bottom: --pix-color-spacing-xxs;
+  font-weight: --pix-font-medium;
+}
+
+@mixin subLabel() {
+  @include label();
+
+  font-size: 0.813rem;
+  line-height: 1rem;
+  color: --pix-color-neutral-60;
+  font-weight: --pix-font-normal;
+}
+
+@mixin errorMessage() {
+  font-size: 0.75rem;
+  color: --pix-color-error-70;
+  margin-top: --pix-color-spacing-xxs;
+}
+
+@mixin formElementInError() {
+  border-color: --pix-color-error-70;
+  box-shadow: inset 0 0 0 0.6px --pix-color-error-70;
+}
+
+@mixin formElementInSuccess() {
+  border-color: --pix-color-success-60;
+  box-shadow: inset 0 0 0 0.6px --pix-color-success-60;
+}
+
+@mixin input() {
+  font-size: 0.875rem;
+  font-weight: --pix-font-normal;
+  color: --pix-color-neutral-90;
+  border-radius: --pix-color-spacing-xxs;
+  padding: 0 --pix-color-spacing-s 0 --pix-color-spacing-s;
+}
+
+.pix-form__label {
+  @include label();
+
+  padding-bottom: 12px;
+}
+
+.pix-form__actions {
+  display: flex;
+  justify-content: center;
+
+  & > .pix-button:first-child {
+    margin-right: 10px;
+  }
+}
+
+.mandatory-mark,
+.mandatory-mark[title] {
+  cursor: help;
+  color: --pix-color-error-70;
+  text-decoration: none;
+  border: none;
+}

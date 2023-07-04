@@ -1,3 +1,13 @@
-@import "./design-tokens/colors.css";
+@import "./design-tokens/breakpoints.scss";
+@import "./design-tokens/colors.scss";
+@import "./design-tokens/fonts.scss";
+@import "./design-tokens/form.scss";
+@import "./design-tokens/shadows.scss";
+@import "./design-tokens/spacing.scss";
+@import "./design-tokens/typography.scss";
+
+// Themes
 @import "./themes/test/design-tokens/colors.css";
+
+// Components
 @import "./components/button.scss";
