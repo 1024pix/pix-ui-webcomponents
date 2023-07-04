@@ -1,51 +1,17 @@
 export default {
   title: "Button",
   render: ({ label, ...args }) => {
-    // You can either use a function to create DOM elements or use a plain html string!
-    // return `<div>${label}</div>`;
     return `<button
       type="button"
-      class="pix-button pix-button--shape-squircle pix-button--size-big pix-button--background-blue"
+      class="pix-button"
     >
       ${label}
     </button>`;
   },
-  argTypes: {
-    backgroundColor: { control: "color" },
-    label: { control: "text" },
-    onClick: { action: "onClick" },
-    primary: { control: "boolean" },
-    size: {
-      control: { type: "select" },
-      options: ["small", "medium", "large"],
-    },
-  },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/html/writing-stories/args
-export const Primary = {
+export const Default = {
   args: {
-    primary: true,
-    label: "Button",
-  },
-};
-
-export const Secondary = {
-  args: {
-    label: "Button",
-  },
-};
-
-export const Large = {
-  args: {
-    size: "large",
-    label: "Button",
-  },
-};
-
-export const Small = {
-  args: {
-    size: "small",
-    label: "Button",
+    label: "Default button",
   },
 };
