@@ -27,6 +27,6 @@ export class PixButton {
   }
 
   render() {
-    return <button>HelloPix {this.getText()}</button>;
+    return <button class="primary">HelloPix {this.getText()}</button>;
   }
 }
