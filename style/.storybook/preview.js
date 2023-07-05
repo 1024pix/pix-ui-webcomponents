@@ -1,6 +1,9 @@
 /** @type { import('@storybook/html').Preview } */
+import createStyleTags from './createStyleTags';
+import cssVariablesTheme from '@etchteam/storybook-addon-css-variables-theme'
 
-import "../style.scss";
+const defaultTheme = createStyleTags('../themes/pix-theme-default.scss?inline');
+const plutoTheme = createStyleTags('../themes/pix-theme-pluto.scss?inline');
 
 const preview = {
   parameters: {
@@ -11,14 +14,15 @@ const preview = {
         date: /Date$/,
       },
     },
-    themes: {
-      default: "basic",
-      list: [
-        { name: "basic", color: "gold" },
-        { name: "test", class: "pix-theme-pluto", color: "#556bcc" },
-      ],
-    },
+    cssVariables: {
+      files: {
+        'Default Theme': defaultTheme,
+        'Pluto Theme': plutoTheme,
+      },
+      defaultTheme: 'Default Theme'
+    }
   },
+  decorators: [ cssVariablesTheme ]
 };
 
 export default preview;

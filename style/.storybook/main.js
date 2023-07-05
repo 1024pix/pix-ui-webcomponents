@@ -6,7 +6,8 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "storybook-addon-themes"
+    "storybook-addon-themes",
+    "@etchteam/storybook-addon-css-variables-theme",
   ],
   framework: {
     name: "@storybook/html-vite",
