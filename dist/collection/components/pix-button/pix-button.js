@@ -10,10 +10,10 @@ export class PixButton {
     return format(this.first, this.middle, this.last);
   }
   render() {
-    return h("button", { class: "primary" }, "HelloPix ", this.getText());
+    return h("button", { class: 'primary' }, "HelloPix ", this.getText());
   }
   static get is() { return "pix-button"; }
-  static get encapsulation() { return "scoped"; }
+  static get encapsulation() { return "shadow"; }
   static get originalStyleUrls() {
     return {
       "$": ["pix-button.css"]

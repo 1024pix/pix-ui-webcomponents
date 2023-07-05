@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-ebfd0939.js');
+const index = require('./index-a8813fde.js');
 
 function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
@@ -26,7 +26,7 @@ const MyComponent = class {
 };
 MyComponent.style = myComponentCss;
 
-const pixButtonCss = ".sc-pix-button-h{display:block}.primary.sc-pix-button{display:block;justify-content:center;align-items:center;text-decoration:none;background-color:#3D68FF;padding:12px 24px;border-radius:4px;color:#FFFFFF;font-size:0.875rem;font-weight:500;white-space:nowrap;cursor:pointer}";
+const pixButtonCss = ":host{display:block}.primary{display:block;justify-content:center;align-items:center;text-decoration:none;background-color:#3D68FF;padding:12px 24px;border-radius:4px;color:#FFFFFF;font-size:0.875rem;font-weight:500;white-space:nowrap;cursor:pointer}";
 
 const PixButton = class {
   constructor(hostRef) {
@@ -39,7 +39,7 @@ const PixButton = class {
     return format(this.first, this.middle, this.last);
   }
   render() {
-    return index.h("button", { class: "primary" }, "HelloPix ", this.getText());
+    return index.h("button", { class: 'primary' }, "HelloPix ", this.getText());
   }
 };
 PixButton.style = pixButtonCss;

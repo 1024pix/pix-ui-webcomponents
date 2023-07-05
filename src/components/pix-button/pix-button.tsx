@@ -4,8 +4,7 @@ import { format } from '../../utils/utils';
 @Component({
   tag: 'pix-button',
   styleUrl: 'pix-button.css',
-  // shadow: true,
-  scoped: true,
+  shadow: true,
 })
 export class PixButton {
   /**
@@ -28,6 +27,6 @@ export class PixButton {
   }
 
   render() {
-    return <button class="primary">HelloPix {this.getText()}</button>;
+    return <button class={'primary'}>HelloPix {this.getText()}</button>;
   }
 }

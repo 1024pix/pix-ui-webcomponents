@@ -1,5 +1,5 @@
-import { p as promiseResolve, b as bootstrapLazy } from './index-77793311.js';
-export { s as setNonce } from './index-77793311.js';
+import { p as promiseResolve, b as bootstrapLazy } from './index-c61f04d5.js';
+export { s as setNonce } from './index-c61f04d5.js';
 
 /*
  Stencil Client Patch Browser v4.0.1 | MIT Licensed | https://stenciljs.com
@@ -14,7 +14,7 @@ const patchBrowser = () => {
 };
 
 patchBrowser().then(options => {
-  return bootstrapLazy([["my-component_2",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}],[2,"pix-button",{"first":[1],"middle":[1],"last":[1]}]]]], options);
+  return bootstrapLazy([["my-component_2",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}],[1,"pix-button",{"first":[1],"middle":[1],"last":[1]}]]]], options);
 });
 
 //# sourceMappingURL=pix-ui-webcomponents-stencil.js.map

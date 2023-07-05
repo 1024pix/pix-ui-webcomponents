@@ -266,9 +266,6 @@ const attachStyles = (hostRef) => {
         // DOM WRITE!!
         elm['s-sc'] = scopeId;
         elm.classList.add(scopeId + '-h');
-        if (flags & 2 /* CMP_FLAGS.scopedCssEncapsulation */) {
-            elm.classList.add(scopeId + '-s');
-        }
     }
     endAttachStyles();
 };
@@ -1323,4 +1320,4 @@ const writeTask = /*@__PURE__*/ queueTask(queueDomWrites, true);
 
 export { bootstrapLazy as b, h, promiseResolve as p, registerInstance as r, setNonce as s };
 
-//# sourceMappingURL=index-77793311.js.map
+//# sourceMappingURL=index-c61f04d5.js.map

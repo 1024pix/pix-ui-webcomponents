@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-ebfd0939.js');
+const index = require('./index-a8813fde.js');
 
 /*
  Stencil Client Patch Browser v4.0.1 | MIT Licensed | https://stenciljs.com
@@ -17,7 +17,7 @@ const patchBrowser = () => {
 };
 
 patchBrowser().then(options => {
-  return index.bootstrapLazy([["my-component_2.cjs",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}],[2,"pix-button",{"first":[1],"middle":[1],"last":[1]}]]]], options);
+  return index.bootstrapLazy([["my-component_2.cjs",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}],[1,"pix-button",{"first":[1],"middle":[1],"last":[1]}]]]], options);
 });
 
 exports.setNonce = index.setNonce;
