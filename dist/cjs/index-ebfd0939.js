@@ -288,6 +288,9 @@ const attachStyles = (hostRef) => {
         // DOM WRITE!!
         elm['s-sc'] = scopeId;
         elm.classList.add(scopeId + '-h');
+        if (flags & 2 /* CMP_FLAGS.scopedCssEncapsulation */) {
+            elm.classList.add(scopeId + '-s');
+        }
     }
     endAttachStyles();
 };
@@ -1346,4 +1349,4 @@ exports.promiseResolve = promiseResolve;
 exports.registerInstance = registerInstance;
 exports.setNonce = setNonce;
 
-//# sourceMappingURL=index-a8813fde.js.map
+//# sourceMappingURL=index-ebfd0939.js.map

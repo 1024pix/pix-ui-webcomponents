@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-c61f04d5.js';
+import { r as registerInstance, h } from './index-77793311.js';
 
 function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
@@ -22,7 +22,7 @@ const MyComponent = class {
 };
 MyComponent.style = myComponentCss;
 
-const pixButtonCss = ":host{display:block}.primary{display:block;justify-content:center;align-items:center;text-decoration:none;background-color:#3D68FF;padding:12px 24px;border-radius:4px;color:#FFFFFF;font-size:0.875rem;font-weight:500;white-space:nowrap;cursor:pointer}";
+const pixButtonCss = ".sc-pix-button-h{display:block}.primary.sc-pix-button{display:block;justify-content:center;align-items:center;text-decoration:none;background-color:#3D68FF;padding:12px 24px;border-radius:4px;color:#FFFFFF;font-size:0.875rem;font-weight:500;white-space:nowrap;cursor:pointer}";
 
 const PixButton = class {
   constructor(hostRef) {

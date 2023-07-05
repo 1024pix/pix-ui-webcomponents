@@ -4,7 +4,8 @@ import { format } from '../../utils/utils';
 @Component({
   tag: 'pix-button',
   styleUrl: 'pix-button.css',
-  shadow: true,
+  // shadow: true,
+  scoped: true,
 })
 export class PixButton {
   /**
