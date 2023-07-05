@@ -20,6 +20,20 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface PixButton {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +42,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLPixButtonElement extends Components.PixButton, HTMLStencilElement {
+    }
+    var HTMLPixButtonElement: {
+        prototype: HTMLPixButtonElement;
+        new (): HTMLPixButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "pix-button": HTMLPixButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +68,23 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface PixButton {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "pix-button": PixButton;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +92,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "pix-button": LocalJSX.PixButton & JSXBase.HTMLAttributes<HTMLPixButtonElement>;
         }
     }
 }
