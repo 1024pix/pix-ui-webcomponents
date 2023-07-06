@@ -1,0 +1,2 @@
+import{p as t,b as o}from"./p-c9b865ed.js";export{s as setNonce}from"./p-c9b865ed.js";const e=()=>{const s=import.meta.url;const o={};if(s!==""){o.resourcesUrl=new URL(".",s).href}return t(o)};e().then((t=>o([["p-55ab37b0",[[1,"my-component",{first:[1],middle:[1],last:[1]}],[1,"pix-button",{first:[1],middle:[1],last:[1]}]]]],t)));
+//# sourceMappingURL=pix-ui-webcomponents.esm.js.map

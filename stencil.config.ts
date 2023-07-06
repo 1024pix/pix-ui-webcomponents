@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'pix-ui-webcomponents-stencil',
+  namespace: 'pix-ui-webcomponents',
   outputTargets: [
     {
       type: 'dist',

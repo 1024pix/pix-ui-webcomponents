@@ -10,7 +10,9 @@ describe('pix-button', () => {
       <pix-button>
         <mock:shadow-root>
           <div>
-            Hello, World! I'm
+          <button class="primary">
+            HelloPix
+          </button>
           </div>
         </mock:shadow-root>
       </pix-button>
@@ -25,7 +27,9 @@ describe('pix-button', () => {
       <pix-button first="Stencil" last="'Don't call me a framework' JS">
         <mock:shadow-root>
           <div>
-            Hello, World! I'm Stencil 'Don't call me a framework' JS
+          <button class="primary">
+            HelloPix Stencil 'Don't call me a framework' JS
+          </button>
           </div>
         </mock:shadow-root>
       </pix-button>

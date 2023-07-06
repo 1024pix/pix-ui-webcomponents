@@ -16,7 +16,7 @@ const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTM
     return format(this.first, this.middle, this.last);
   }
   render() {
-    return h("button", { class: 'primary' }, "HelloPix ", this.getText());
+    return h("div", null, h("button", { class: 'primary' }, "HelloPix ", this.getText()));
   }
   static get style() { return pixButtonCss; }
 }, [1, "pix-button", {

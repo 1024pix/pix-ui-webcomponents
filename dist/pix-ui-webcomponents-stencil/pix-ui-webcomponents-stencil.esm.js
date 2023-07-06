@@ -1,2 +1,0 @@
-import{p as t,b as o}from"./p-6de74ab9.js";export{s as setNonce}from"./p-6de74ab9.js";const e=()=>{const s=import.meta.url;const o={};if(s!==""){o.resourcesUrl=new URL(".",s).href}return t(o)};e().then((t=>o([["p-36b87983",[[1,"my-component",{first:[1],middle:[1],last:[1]}],[1,"pix-button",{first:[1],middle:[1],last:[1]}]]]],t)));
-//# sourceMappingURL=pix-ui-webcomponents-stencil.esm.js.map

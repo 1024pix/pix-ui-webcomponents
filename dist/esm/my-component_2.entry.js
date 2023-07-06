@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-c61f04d5.js';
+import { r as registerInstance, h } from './index-ea61e3db.js';
 
 function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
@@ -35,7 +35,7 @@ const PixButton = class {
     return format(this.first, this.middle, this.last);
   }
   render() {
-    return h("button", { class: 'primary' }, "HelloPix ", this.getText());
+    return h("div", null, h("button", { class: 'primary' }, "HelloPix ", this.getText()));
   }
 };
 PixButton.style = pixButtonCss;

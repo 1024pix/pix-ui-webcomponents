@@ -1,26 +1,4 @@
-'use strict';
-
-function _interopNamespace(e) {
-  if (e && e.__esModule) return e;
-  var n = Object.create(null);
-  if (e) {
-    Object.keys(e).forEach(function (k) {
-      if (k !== 'default') {
-        var d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: function () {
-            return e[k];
-          }
-        });
-      }
-    });
-  }
-  n['default'] = e;
-  return Object.freeze(n);
-}
-
-const NAMESPACE = 'pix-ui-webcomponents-stencil';
+const NAMESPACE = 'pix-ui-webcomponents';
 
 /**
  * Virtual DOM patching algorithm based on Snabbdom by
@@ -1263,12 +1241,12 @@ const loadModule = (cmpMeta, hostRef, hmrVersionId) => {
         return module[exportName];
     }
     /*!__STENCIL_STATIC_IMPORT_SWITCH__*/
-    return Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require(
+    return import(
     /* @vite-ignore */
     /* webpackInclude: /\.entry\.js$/ */
     /* webpackExclude: /\.system\.entry\.js$/ */
     /* webpackMode: "lazy" */
-    `./${bundleId}.entry.js${''}`)); }).then((importedModule) => {
+    `./${bundleId}.entry.js${''}`).then((importedModule) => {
         {
             cmpModules.set(bundleId, importedModule);
         }
@@ -1340,10 +1318,6 @@ const flush = () => {
 const nextTick = /*@__PURE__*/ (cb) => promiseResolve().then(cb);
 const writeTask = /*@__PURE__*/ queueTask(queueDomWrites, true);
 
-exports.bootstrapLazy = bootstrapLazy;
-exports.h = h;
-exports.promiseResolve = promiseResolve;
-exports.registerInstance = registerInstance;
-exports.setNonce = setNonce;
+export { bootstrapLazy as b, h, promiseResolve as p, registerInstance as r, setNonce as s };
 
-//# sourceMappingURL=index-a8813fde.js.map
+//# sourceMappingURL=index-ea61e3db.js.map

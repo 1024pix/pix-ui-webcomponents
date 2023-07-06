@@ -15,18 +15,18 @@ describe('pix-button', () => {
     await page.setContent('<pix-button></pix-button>');
     const component = await page.find('pix-button');
     const element = await page.find('pix-button >>> div');
-    expect(element.textContent).toEqual(`Hello, World! I'm `);
+    expect(element.textContent).toEqual(`HelloPix `);
 
     component.setProperty('first', 'James');
     await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James`);
+    expect(element.textContent).toEqual(`HelloPix James`);
 
     component.setProperty('last', 'Quincy');
     await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James Quincy`);
+    expect(element.textContent).toEqual(`HelloPix James Quincy`);
 
     component.setProperty('middle', 'Earl');
     await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James Earl Quincy`);
+    expect(element.textContent).toEqual(`HelloPix James Earl Quincy`);
   });
 });

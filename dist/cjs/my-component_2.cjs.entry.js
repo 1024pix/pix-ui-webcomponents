@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-a8813fde.js');
+const index = require('./index-f3a3098a.js');
 
 function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
@@ -39,7 +39,7 @@ const PixButton = class {
     return format(this.first, this.middle, this.last);
   }
   render() {
-    return index.h("button", { class: 'primary' }, "HelloPix ", this.getText());
+    return index.h("div", null, index.h("button", { class: 'primary' }, "HelloPix ", this.getText()));
   }
 };
 PixButton.style = pixButtonCss;

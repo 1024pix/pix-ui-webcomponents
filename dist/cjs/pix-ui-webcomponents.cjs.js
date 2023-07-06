@@ -2,13 +2,13 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-a8813fde.js');
+const index = require('./index-f3a3098a.js');
 
 /*
  Stencil Client Patch Browser v4.0.1 | MIT Licensed | https://stenciljs.com
  */
 const patchBrowser = () => {
-    const importMeta = (typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('pix-ui-webcomponents-stencil.cjs.js', document.baseURI).href));
+    const importMeta = (typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('pix-ui-webcomponents.cjs.js', document.baseURI).href));
     const opts = {};
     if (importMeta !== '') {
         opts.resourcesUrl = new URL('.', importMeta).href;
@@ -22,4 +22,4 @@ patchBrowser().then(options => {
 
 exports.setNonce = index.setNonce;
 
-//# sourceMappingURL=pix-ui-webcomponents-stencil.cjs.js.map
+//# sourceMappingURL=pix-ui-webcomponents.cjs.js.map
