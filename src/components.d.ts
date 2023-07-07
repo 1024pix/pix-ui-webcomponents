@@ -85,7 +85,7 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
-        "onClic"?: (event: PixButtonCustomEvent<any>) => void;
+        "onClick"?: (event: PixButtonCustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

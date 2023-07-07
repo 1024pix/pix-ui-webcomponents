@@ -22,9 +22,14 @@ export class PixButton {
    */
   @Prop() last: string;
 
-  @Event() clic: EventEmitter<any>
+  @Event() click: EventEmitter<any>
   handleClick(ev) {
     console.log(ev);
+  }
+
+  testClick(e) {
+    console.log('test', e)
+    return this.click.emit(e)
   }
 
 
@@ -33,6 +38,8 @@ export class PixButton {
   }
 
   render() {
-    return <div><button class={'primary'} onClick={(e) => this.clic.emit(e)}>HelloPix {this.getText()}</button></div>;
+    return (<div>
+      <button class={'primary'} onClick={this.testClick.bind(this)}>HelloPix {this.getText()}</button>
+    </div>);
   }
 }

@@ -12,8 +12,9 @@ export declare class PixButton {
    * The last name
    */
   last: string;
-  clic: EventEmitter<any>;
+  click: EventEmitter<any>;
   handleClick(ev: any): void;
+  testClick(e: any): CustomEvent<any>;
   private getText;
   render(): any;
 }

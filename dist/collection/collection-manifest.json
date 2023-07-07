@@ -1,0 +1,13 @@
+{
+  "entries": [
+    "components/my-component/my-component.js",
+    "components/pix-button/pix-button.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.0.1",
+    "typescriptVersion": "5.0.4"
+  },
+  "collections": [],
+  "bundles": []
+}
