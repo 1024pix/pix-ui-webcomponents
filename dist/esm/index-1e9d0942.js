@@ -10,6 +10,7 @@ const NAMESPACE = 'pix-ui-webcomponents';
  */
 let scopeId;
 let hostTagName;
+let isSvgMode = false;
 let queuePending = false;
 const createTime = (fnName, tagName = '') => {
     {
@@ -172,6 +173,11 @@ const isHost = (node) => node && node.$tag$ === Host;
 const parsePropertyValue = (propValue, propType) => {
     // ensure this value is of the correct prop type
     if (propValue != null && !isComplexType(propValue)) {
+        if (propType & 4 /* MEMBER_FLAGS.Boolean */) {
+            // per the HTML spec, any string value means it is a boolean true value
+            // but we'll cheat here and say that the string "false" is the boolean false
+            return propValue === 'false' ? false : propValue === '' || !!propValue;
+        }
         if (propType & 1 /* MEMBER_FLAGS.String */) {
             // could have been passed as a number or boolean
             // but we still want it as a string
@@ -342,7 +348,41 @@ const setAccessor = (elm, memberName, oldValue, newValue, isSvg, flags) => {
                 plt.ael(elm, memberName, newValue, false);
             }
         }
-        else ;
+        else {
+            // Set property if it exists and it's not a SVG
+            const isComplex = isComplexType(newValue);
+            if ((isProp || (isComplex && newValue !== null)) && !isSvg) {
+                try {
+                    if (!elm.tagName.includes('-')) {
+                        const n = newValue == null ? '' : newValue;
+                        // Workaround for Safari, moving the <input> caret when re-assigning the same valued
+                        if (memberName === 'list') {
+                            isProp = false;
+                        }
+                        else if (oldValue == null || elm[memberName] != n) {
+                            elm[memberName] = n;
+                        }
+                    }
+                    else {
+                        elm[memberName] = newValue;
+                    }
+                }
+                catch (e) { }
+            }
+            if (newValue == null || newValue === false) {
+                if (newValue !== false || elm.getAttribute(memberName) === '') {
+                    {
+                        elm.removeAttribute(memberName);
+                    }
+                }
+            }
+            else if ((!isProp || flags & 4 /* VNODE_FLAGS.isHost */ || isSvg) && !isComplex) {
+                newValue = newValue === true ? '' : newValue;
+                {
+                    elm.setAttribute(memberName, newValue);
+                }
+            }
+        }
     }
 };
 const parseClassListRegex = /\s/;
@@ -360,13 +400,13 @@ const updateElement = (oldVnode, newVnode, isSvgMode, memberName) => {
         // remove attributes no longer present on the vnode by setting them to undefined
         for (memberName in oldVnodeAttrs) {
             if (!(memberName in newVnodeAttrs)) {
-                setAccessor(elm, memberName, oldVnodeAttrs[memberName], undefined);
+                setAccessor(elm, memberName, oldVnodeAttrs[memberName], undefined, isSvgMode, newVnode.$flags$);
             }
         }
     }
     // add new & update changed attributes
     for (memberName in newVnodeAttrs) {
-        setAccessor(elm, memberName, oldVnodeAttrs[memberName], newVnodeAttrs[memberName]);
+        setAccessor(elm, memberName, oldVnodeAttrs[memberName], newVnodeAttrs[memberName], isSvgMode, newVnode.$flags$);
     }
 };
 /**
@@ -394,7 +434,7 @@ const createElm = (oldParentVNode, newParentVNode, childIndex, parentElm) => {
         elm = newVNode.$elm$ = (doc.createElement(newVNode.$tag$));
         // add css classes, attrs, props, listeners, etc.
         {
-            updateElement(null, newVNode);
+            updateElement(null, newVNode, isSvgMode);
         }
         if (isDef(scopeId) && elm['s-si'] !== scopeId) {
             // if there is a scopeId and this is the initial render
@@ -685,7 +725,7 @@ const patch = (oldVNode, newVNode) => {
                 // either this is the first render of an element OR it's an update
                 // AND we already know it's possible it could have changed
                 // this updates the element's css classes, attrs, props, listeners, etc.
-                updateElement(oldVNode, newVNode);
+                updateElement(oldVNode, newVNode, isSvgMode);
             }
         }
         if (oldChildren !== null && newChildren !== null) {
@@ -1376,4 +1416,4 @@ const writeTask = /*@__PURE__*/ queueTask(queueDomWrites, true);
 
 export { bootstrapLazy as b, createEvent as c, h, promiseResolve as p, registerInstance as r, setNonce as s };
 
-//# sourceMappingURL=index-afebc5c6.js.map
+//# sourceMappingURL=index-1e9d0942.js.map

@@ -5,6 +5,7 @@ export class PixButton {
     this.first = undefined;
     this.middle = undefined;
     this.last = undefined;
+    this.isDisabled = undefined;
   }
   handleClick(ev) {
     console.log(ev);
@@ -17,7 +18,7 @@ export class PixButton {
     return format(this.first, this.middle, this.last);
   }
   render() {
-    return (h("div", null, h("button", { class: 'primary', onClick: this.testClick.bind(this) }, "HelloPix ", this.getText())));
+    return (h("div", null, h("button", { disabled: this.isDisabled, class: 'primary', onClick: this.testClick.bind(this) }, "HelloPix ", this.getText())));
   }
   static get is() { return "pix-button"; }
   static get encapsulation() { return "shadow"; }
@@ -82,6 +83,23 @@ export class PixButton {
           "text": "The last name"
         },
         "attribute": "last",
+        "reflect": false
+      },
+      "isDisabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": "disable button"
+        },
+        "attribute": "is-disabled",
         "reflect": false
       }
     };

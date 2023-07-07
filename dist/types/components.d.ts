@@ -26,6 +26,10 @@ export namespace Components {
          */
         "first": string;
         /**
+          * disable button
+         */
+        "isDisabled": boolean;
+        /**
           * The last name
          */
         "last": string;
@@ -77,6 +81,10 @@ declare namespace LocalJSX {
           * The first name
          */
         "first"?: string;
+        /**
+          * disable button
+         */
+        "isDisabled"?: boolean;
         /**
           * The last name
          */

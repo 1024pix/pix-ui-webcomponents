@@ -1,2 +1,2 @@
-import{p as t,b as o}from"./p-b62186cd.js";export{s as setNonce}from"./p-b62186cd.js";const e=()=>{const s=import.meta.url;const o={};if(s!==""){o.resourcesUrl=new URL(".",s).href}return t(o)};e().then((t=>o([["p-fffb9493",[[1,"my-component",{first:[1],middle:[1],last:[1]}],[1,"pix-button",{first:[1],middle:[1],last:[1]}]]]],t)));
+import{p as t,b as a}from"./p-1a35af87.js";export{s as setNonce}from"./p-1a35af87.js";const i=()=>{const s=import.meta.url;const a={};if(s!==""){a.resourcesUrl=new URL(".",s).href}return t(a)};i().then((s=>a([["p-5a93257b",[[1,"my-component",{first:[1],middle:[1],last:[1]}],[1,"pix-button",{first:[1],middle:[1],last:[1],isDisabled:[4,"is-disabled"]}]]]],s)));
 //# sourceMappingURL=pix-ui-webcomponents.esm.js.map

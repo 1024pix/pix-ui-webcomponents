@@ -12,6 +12,10 @@ export declare class PixButton {
    * The last name
    */
   last: string;
+  /**
+   * disable button
+   */
+  isDisabled: boolean;
   click: EventEmitter<any>;
   handleClick(ev: any): void;
   testClick(e: any): CustomEvent<any>;

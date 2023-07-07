@@ -12,7 +12,9 @@
     <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
     <pix-button first="Hello" id="mon-id"></pix-button>
   <script>
-    document.querySelector('#mon-id').addEventListener('click', (e) => { console.log('click : ', e) })
+    const pixButton = document.querySelector('#mon-id');
+    pixButton.addEventListener('click', (e) => { console.log('click : ', e) })
+    pixButton.isDisabled = false;
   </script>
   </body>
 </html>

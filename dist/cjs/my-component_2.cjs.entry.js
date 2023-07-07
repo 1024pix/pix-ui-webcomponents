@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-6f9e891f.js');
+const index = require('./index-bffde51d.js');
 
 function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
@@ -26,7 +26,7 @@ const MyComponent = class {
 };
 MyComponent.style = myComponentCss;
 
-const pixButtonCss = ":host{display:block}.primary{display:block;justify-content:center;align-items:center;text-decoration:none;background-color:#3D68FF;padding:12px 24px;border-radius:4px;color:#FFFFFF;font-size:0.875rem;font-weight:500;white-space:nowrap;cursor:pointer}";
+const pixButtonCss = ":host{display:block}.primary{display:block;justify-content:center;align-items:center;text-decoration:none;background-color:#3D68FF;padding:12px 24px;border-radius:4px;color:#FFFFFF;font-size:0.875rem;font-weight:500;white-space:nowrap;cursor:pointer}.primary:disabled{cursor:not-allowed;background:#000}";
 
 const PixButton = class {
   constructor(hostRef) {
@@ -35,6 +35,7 @@ const PixButton = class {
     this.first = undefined;
     this.middle = undefined;
     this.last = undefined;
+    this.isDisabled = undefined;
   }
   handleClick(ev) {
     console.log(ev);
@@ -47,7 +48,7 @@ const PixButton = class {
     return format(this.first, this.middle, this.last);
   }
   render() {
-    return (index.h("div", null, index.h("button", { class: 'primary', onClick: this.testClick.bind(this) }, "HelloPix ", this.getText())));
+    return (index.h("div", null, index.h("button", { disabled: this.isDisabled, class: 'primary', onClick: this.testClick.bind(this) }, "HelloPix ", this.getText())));
   }
 };
 PixButton.style = pixButtonCss;

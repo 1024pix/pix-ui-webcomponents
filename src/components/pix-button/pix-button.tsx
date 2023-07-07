@@ -22,6 +22,13 @@ export class PixButton {
    */
   @Prop() last: string;
 
+  /**
+   * disable button
+   */
+  @Prop() isDisabled: boolean;
+
+
+
   @Event() click: EventEmitter<any>
   handleClick(ev) {
     console.log(ev);
@@ -39,7 +46,8 @@ export class PixButton {
 
   render() {
     return (<div>
-      <button class={'primary'} onClick={this.testClick.bind(this)}>HelloPix {this.getText()}</button>
+      <button disabled={this.isDisabled} class={'primary'}
+              onClick={this.testClick.bind(this)}>HelloPix {this.getText()}</button>
     </div>);
   }
 }
