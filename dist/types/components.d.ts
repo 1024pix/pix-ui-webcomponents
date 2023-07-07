@@ -35,6 +35,10 @@ export namespace Components {
         "middle": string;
     }
 }
+export interface PixButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPixButtonElement;
+}
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -81,6 +85,7 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
+        "onClic"?: (event: PixButtonCustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

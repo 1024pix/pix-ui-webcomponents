@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -22,11 +22,17 @@ export class PixButton {
    */
   @Prop() last: string;
 
+  @Event() clic: EventEmitter<any>
+  handleClick(ev) {
+    console.log(ev);
+  }
+
+
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
 
   render() {
-    return <div><button class={'primary'}>HelloPix {this.getText()}</button></div>;
+    return <div><button class={'primary'} onClick={(e) => this.clic.emit(e)}>HelloPix {this.getText()}</button></div>;
   }
 }

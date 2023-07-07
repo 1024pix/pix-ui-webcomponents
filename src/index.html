@@ -10,6 +10,9 @@
   </head>
   <body>
     <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-    <pix-button></pix-button>
+    <pix-button first="Hello" id="mon-id"></pix-button>
+  <script>
+    document.querySelector('#mon-id').addEventListener('clic', (e) => { console.log('clic : ', e) })
+  </script>
   </body>
 </html>

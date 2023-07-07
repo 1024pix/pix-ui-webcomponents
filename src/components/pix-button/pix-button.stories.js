@@ -3,8 +3,8 @@ export default {
   title: 'components/pix-button',
 };
 
-const template = ({first, middle, last}) => {
-  return `<pix-button first="${first}" middle="${middle}" last="${last}"></pix-button>`;
+const template = (args) => {
+  return `<pix-button first="${args.first}" middle="${args.middle}" last="${args.last}"></pix-button>`;
 }
 
 export const firstDisplay = template.bind({});
