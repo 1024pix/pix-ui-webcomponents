@@ -1,0 +1,75 @@
+.pix-tag {
+  @extend %pix-body-s;
+
+  display: inline-block;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+  padding: 4px 16px;
+  border: 1px solid transparent;
+  border-radius: 0.95rem;
+  color: var(--pix-neutral-0);
+  background-color: var(--pix-primary);
+  font-weight: var(--pix-font-medium);
+
+  &--blue-light {
+    color: var(--pix-primary-80);
+    background-color: var(--pix-primary-10);
+  }
+
+  &--green {
+    background-color: var(--pix-success-70);
+  }
+
+  &--green-light {
+    color: var(--pix-success-80);
+    background-color: var(--pix-success-10);
+  }
+
+  &--purple {
+    background-color: var(--pix-tertiary-60);
+  }
+
+  &--purple-light {
+    color: var(--pix-tertiary-80);
+    background-color: var(--pix-tertiary-5);
+  }
+
+  &--yellow {
+    color: var(--pix-neutral-90);
+    background-color: var(--pix-warning-40);
+  }
+
+  &--yellow-light {
+    color: var(--pix-warning-80);
+    background-color: var(--pix-warning-10);
+  }
+
+  &--orange {
+    background-color: var(--pix-warning-70);
+  }
+
+  &--orange-light {
+    color: var(--pix-warning-80);
+    background-color: var(--pix-warning-10);
+  }
+
+  &--grey {
+    color: var(--pix-neutral-15);
+    background-color: var(--pix-neutral-60);
+  }
+
+  &--grey-light {
+    color: var(--pix-neutral-90);
+    background-color: var(--pix-neutral-20);
+  }
+
+  &--compact {
+    @extend %pix-body-xs;
+
+    font-weight: var(--pix-font-medium);
+    text-transform: uppercase;
+    padding: 4px 13px;
+    line-height: inherit;
+  }
+}

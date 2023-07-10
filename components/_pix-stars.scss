@@ -1,0 +1,36 @@
+.pix-stars {
+  display: flex;
+  height: 2.25rem;
+
+  & * + * {
+    margin-left: var(--pix-spacing-xxs);
+  }
+}
+
+.pix-stars__item {
+  height: 100%;
+  fill: var(--pix-neutral-5);
+  stroke: var(--pix-neutral-40);
+
+  &[data-acquired] {
+    fill: var(--pix-secondary-40);
+    stroke: var(--pix-secondary-60);
+  }
+}
+
+// Color variant : Blue
+.pix-stars__item--color-blue[data-acquired] {
+  fill: var(--pix-primary-40);
+  stroke: var(--pix-primary-60);
+}
+
+// Color variant : Grey
+.pix-stars__item--color-grey {
+  fill: var(--pix-neutral-0);
+  stroke: var(--pix-neutral-40);
+
+  &[data-acquired] {
+    fill: var(--pix-neutral-40);
+    stroke: var(--pix-neutral-40);
+  }
+}

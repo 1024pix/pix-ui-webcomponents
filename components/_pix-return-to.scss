@@ -1,0 +1,82 @@
+.pix-return-to {
+  font-size: 1rem;
+  font-weight: var(--pix-font-medium);
+  letter-spacing: 0.15px;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: transparent solid 2px;
+  text-decoration: none;
+
+  &__icon {
+    position: relative;
+    z-index: 3;
+    padding: 4px 7px;
+    font-size: 1rem;
+  }
+
+  &__icon::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 50%;
+    transition: 0.3s ease opacity;
+  }
+
+  &__text {
+    margin-left: 4px;
+  }
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    background-color: transparent;
+    border-bottom-color: transparent;
+
+    ::before {
+      opacity: 0.2;
+    }
+  }
+
+  &:focus-visible {
+    background-color: var(--pix-warning-40);
+    border-bottom: var(--pix-neutral-100) solid 2px;
+
+    .pix-return-to__text {
+      padding-right: 6px;
+    }
+  }
+
+  @mixin coloriseLink($textColor, $textHoverColor, $arrowColor) {
+    color: $textColor;
+
+    .pix-return-to__icon {
+      color: $arrowColor;
+    }
+
+    &:hover,
+    &:active {
+      color: $textHoverColor;
+
+      ::before {
+        background-color: $arrowColor;
+      }
+    }
+  }
+
+  &--white {
+    @include coloriseLink(var(--pix-pix-neutral-10), var(--pix-neutral-0), var(--pix-neutral-0));
+  }
+
+  &--black {
+    @include coloriseLink(var(--pix-neutral-80), var(--pix-neutral-110), var(--pix-neutral-60));
+  }
+
+  &--blue {
+    @include coloriseLink(var(--pix-communication-dark), var(--pix-primary-60), var(--pix-communication-dark));
+  }
+}
