@@ -9,11 +9,14 @@
     <script nomodule src="/build/pix-ui-webcomponents.js"></script>
   </head>
   <body>
-    <pix-button type="submit" id="mon-id">
-      <span slot="content">coucou</span>
+    <pix-button id="mon-button">
+      Coucou button
+    </pix-button>
+     <pix-button type="submit" id="mon-submit">
+      Coucou submit
     </pix-button>
   <script>
-    const pixButton = document.querySelector('#mon-id');
+    const pixButton = document.querySelector('#mon-button');
     pixButton.triggerAction = async () => {
       await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000));
     }

@@ -35,6 +35,7 @@ export class PixButton {
 
   @Method()
   async _triggerAction(event: MouseEvent) {
+    console.log({type: this.type});
     console.log('is it triggering ? ', this.isTriggering);
     if (this.isDisabled || (this.type === 'submit' && !this.triggerAction)) return;
 
@@ -64,7 +65,7 @@ export class PixButton {
         disabled={this.getIsDisabled()}
         aria-disabled={this.getIsDisabled()}
       >
-        <slot name="content"/>
+        <slot/>
       </button>
     );
   }
