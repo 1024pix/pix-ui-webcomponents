@@ -17,9 +17,10 @@ export class PixButton {
 
   @State() isTriggering: boolean = false;
 
-  private getType() : string | undefined {
-    return this.type || 'button';
-  }
+  //private getType() : string | undefined {
+  //  return this.type || 'button';
+  //}
+
   @Watch('isLoading')
   @Watch('isTriggering')
   private getIsLoading() : boolean {
@@ -35,11 +36,8 @@ export class PixButton {
   @Method()
   async _triggerAction(event: MouseEvent) {
     console.log('is it triggering ? ', this.isTriggering);
-    // this.trigger.emit();
-    if (this.isDisabled || (this.getType() === 'submit' && !this.triggerAction)) {
-      event.stopPropagation();
-      return;
-    }
+    if (this.isDisabled || (this.type === 'submit' && !this.triggerAction)) return;
+
     if (!this.triggerAction) {
       throw new Error('@triggerAction params is required for PixButton !');
     }
@@ -61,7 +59,7 @@ export class PixButton {
     return (
       <button
         onClick={this._triggerAction.bind(this)}
-        type={this.getType()}
+        type={this.type}
         class={'primary'}
         disabled={this.getIsDisabled()}
         aria-disabled={this.getIsDisabled()}
