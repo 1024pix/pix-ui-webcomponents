@@ -9,8 +9,9 @@
     <script nomodule src="/build/pix-ui-webcomponents.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-    <pix-button first="Hello" id="mon-id"></pix-button>
+    <pix-button type="submit" id="mon-id">
+      <span slot="content">coucou</span>
+    </pix-button>
   <script>
     const pixButton = document.querySelector('#mon-id');
     pixButton.addEventListener('click', (e) => { console.log('click : ', e) })

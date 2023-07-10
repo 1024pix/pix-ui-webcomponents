@@ -7,47 +7,62 @@ import { format } from '../../utils/utils';
   shadow: true,
 })
 export class PixButton {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
 
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
+  @Prop() type: string;
 
-  /**
-   * The last name
-   */
-  @Prop() last: string;
-
-  /**
-   * disable button
-   */
   @Prop() isDisabled: boolean;
 
-
-
-  @Event() click: EventEmitter<any>
-  handleClick(ev) {
-    console.log(ev);
+  private getType() : any {
+    return this.type || 'button';
   }
 
-  testClick(e) {
-    console.log('test', e)
-    return this.click.emit(e)
-  }
-
-
-  private getText(): string {
+ /* private getText(): string {
     return format(this.first, this.middle, this.last);
-  }
+  }*/
 
   render() {
     return (<div>
-      <button disabled={this.isDisabled} class={'primary'}
-              onClick={this.testClick.bind(this)}>HelloPix {this.getText()}</button>
+      <button
+        type={this.getType()}
+        disabled={this.isDisabled}
+        class={'primary'}
+      >
+        <slot name="content"/>
+      </button>
     </div>);
   }
 }
+/*
+<button
+  type={{this.type}}
+  class={{this.className}}
+  {{on "click" this.triggerAction}}
+    ...attributes
+disabled={{this.isDisabled}}
+aria-disabled="{{this.isDisabled}}"
+  >
+  {{#if this.isLoading}}
+<div class="loader loader--{{this.loadingColor}}">
+  <div class="bounce1"></div>
+  <div class="bounce2"></div>
+  <div class="bounce3"></div>
+</div>
+<span class="loader__not-visible-text">{{yield}}</span>
+{{else}}
+{{#if @iconBefore}}
+<FaIcon
+  class="pix-button__icon pix-button__icon--before"
+          @icon={{@iconBefore}}
+@prefix={{@prefixIconBefore}}
+/>
+{{/if}}
+  {{yield}}
+  {{#if @iconAfter}}
+  <FaIcon
+    class="pix-button__icon pix-button__icon--after"
+          @icon={{@iconAfter}}
+@prefix={{@prefixIconAfter}}
+  />
+  {{/if}}
+    {{/if}}
+    </button>*/

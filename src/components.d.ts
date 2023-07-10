@@ -21,27 +21,9 @@ export namespace Components {
         "middle": string;
     }
     interface PixButton {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * disable button
-         */
         "isDisabled": boolean;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "type": string;
     }
-}
-export interface PixButtonCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLPixButtonElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -77,23 +59,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface PixButton {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * disable button
-         */
         "isDisabled"?: boolean;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-        "onClick"?: (event: PixButtonCustomEvent<any>) => void;
+        "type"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
