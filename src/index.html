@@ -14,7 +14,9 @@
     </pix-button>
   <script>
     const pixButton = document.querySelector('#mon-id');
-    pixButton.addEventListener('click', (e) => { console.log('click : ', e) })
+    pixButton.triggerAction = async () => {
+      await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000));
+    }
     pixButton.isDisabled = false;
   </script>
   </body>

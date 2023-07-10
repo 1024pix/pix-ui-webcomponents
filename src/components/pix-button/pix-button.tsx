@@ -1,5 +1,4 @@
-import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
-// import { format } from '../../utils/utils';
+import {Component, Prop, Method, h, Watch, State } from '@stencil/core';
 
 @Component({
   tag: 'pix-button',
@@ -8,37 +7,48 @@ import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 })
 export class PixButton {
 
-  @Prop() type: string;
+  @Prop() type: string = "button";
 
   @Prop() isDisabled: boolean;
 
   @Prop() isLoading: boolean;
 
-  isTriggering: boolean = false;
+  @Prop() triggerAction: Function;
+
+  @State() isTriggering: boolean = false;
 
   private getType() : string | undefined {
     return this.type || 'button';
   }
-
+  @Watch('isLoading')
+  @Watch('isTriggering')
   private getIsLoading() : boolean {
     return this.isLoading || this.isTriggering;
   }
-
+  @Watch('isLoading')
+  @Watch('isTriggering')
+  @Watch('isDisabled')
   private getIsDisabled(): boolean {
     return this.getIsLoading() || this.isDisabled;
   }
 
-  // @Event() trigger: EventEmitter<any>
-  async triggerAction(event: MouseEvent) {
+  @Method()
+  async _triggerAction(event: MouseEvent) {
+    console.log('is it triggering ? ', this.isTriggering);
     // this.trigger.emit();
-    if (this.isDisabled || (this.getType() === 'submit' && !this.triggerAction)) return;
+    if (this.isDisabled || (this.getType() === 'submit' && !this.triggerAction)) {
+      event.stopPropagation();
+      return;
+    }
     if (!this.triggerAction) {
       throw new Error('@triggerAction params is required for PixButton !');
     }
     try {
       this.isTriggering = true;
+      console.log('when triggered !', this.triggerAction);
       await this.triggerAction(event);
     } finally {
+      console.log('triggering done ! ');
       this.isTriggering = false;
     }
   }
@@ -48,17 +58,17 @@ export class PixButton {
   }*/
 
   render() {
-    return (<div>
+    return (
       <button
+        onClick={this._triggerAction.bind(this)}
         type={this.getType()}
         class={'primary'}
-        onClick={ev => this.triggerAction(ev)}
         disabled={this.getIsDisabled()}
         aria-disabled={this.getIsDisabled()}
       >
         <slot name="content"/>
       </button>
-    </div>);
+    );
   }
 }
 /*

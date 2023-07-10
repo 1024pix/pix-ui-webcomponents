@@ -21,8 +21,10 @@ export namespace Components {
         "middle": string;
     }
     interface PixButton {
+        "_triggerAction": (event: MouseEvent) => Promise<void>;
         "isDisabled": boolean;
         "isLoading": boolean;
+        "triggerAction": Function;
         "type": string;
     }
 }
@@ -62,6 +64,7 @@ declare namespace LocalJSX {
     interface PixButton {
         "isDisabled"?: boolean;
         "isLoading"?: boolean;
+        "triggerAction"?: Function;
         "type"?: string;
     }
     interface IntrinsicElements {
