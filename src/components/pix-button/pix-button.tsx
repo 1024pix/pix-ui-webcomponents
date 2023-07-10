@@ -4,10 +4,19 @@ import {Component, Prop, Method, h, Watch, State } from '@stencil/core';
   tag: 'pix-button',
   styleUrl: 'pix-button.css',
   shadow: true,
+  // scoped: true,
 })
 export class PixButton {
 
   @Prop() type: string = "button";
+
+  @Prop() size: string = 'big';
+
+  @Prop() shape: string = 'squircle';
+
+  @Prop() backgroundColor: string = 'blue'
+
+  @Prop() isBorderVisible: boolean = false;
 
   @Prop() isDisabled: boolean;
 
@@ -16,10 +25,6 @@ export class PixButton {
   @Prop() triggerAction: Function;
 
   @State() isTriggering: boolean = false;
-
-  //private getType() : string | undefined {
-  //  return this.type || 'button';
-  //}
 
   @Watch('isLoading')
   @Watch('isTriggering')
@@ -31,6 +36,21 @@ export class PixButton {
   @Watch('isDisabled')
   private getIsDisabled(): boolean {
     return this.getIsLoading() || this.isDisabled;
+  }
+
+  @Watch('isLoading')
+  @Watch('isTriggering')
+  @Watch('isDisabled')
+  updateClassNames() {
+    const classNames = [
+      'pix-button',
+      `pix-button--shape-${this.shape}`,
+      `pix-button--size-${this.size}`,
+      `pix-button--background-${this.backgroundColor}`,
+    ];
+    this.isBorderVisible && classNames.push('pix-button--border');
+    this.getIsDisabled() && classNames.push('pix-button--disabled');
+    return classNames.join(' ');
   }
 
   @Method()
@@ -61,7 +81,7 @@ export class PixButton {
       <button
         onClick={this._triggerAction.bind(this)}
         type={this.type}
-        class={'primary'}
+        class={this.updateClassNames()}
         disabled={this.getIsDisabled()}
         aria-disabled={this.getIsDisabled()}
       >

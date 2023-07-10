@@ -22,8 +22,12 @@ export namespace Components {
     }
     interface PixButton {
         "_triggerAction": (event: MouseEvent) => Promise<void>;
+        "backgroundColor": string;
+        "isBorderVisible": boolean;
         "isDisabled": boolean;
         "isLoading": boolean;
+        "shape": string;
+        "size": string;
         "triggerAction": Function;
         "type": string;
     }
@@ -62,8 +66,12 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface PixButton {
+        "backgroundColor"?: string;
+        "isBorderVisible"?: boolean;
         "isDisabled"?: boolean;
         "isLoading"?: boolean;
+        "shape"?: string;
+        "size"?: string;
         "triggerAction"?: Function;
         "type"?: string;
     }

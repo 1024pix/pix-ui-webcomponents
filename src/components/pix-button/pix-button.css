@@ -1,8 +1,10 @@
+/* import '../global.css' */
+
 :host {
   display: block;
 }
 
-.primary {
+.pix-button {
   display: block;
   justify-content: center;
   align-items: center;
@@ -10,7 +12,7 @@
   background-color: #3D68FF;
   padding: 12px 24px;
   border-radius: 4px;
-  color: #FFFFFF;
+  color: var(--color-primary);
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
