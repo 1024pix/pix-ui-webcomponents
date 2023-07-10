@@ -1,5 +1,5 @@
 import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
-import { format } from '../../utils/utils';
+// import { format } from '../../utils/utils';
 
 @Component({
   tag: 'pix-button',
@@ -12,8 +12,35 @@ export class PixButton {
 
   @Prop() isDisabled: boolean;
 
-  private getType() : any {
+  @Prop() isLoading: boolean;
+
+  isTriggering: boolean = false;
+
+  private getType() : string | undefined {
     return this.type || 'button';
+  }
+
+  private getIsLoading() : boolean {
+    return this.isLoading || this.isTriggering;
+  }
+
+  private getIsDisabled(): boolean {
+    return this.getIsLoading() || this.isDisabled;
+  }
+
+  // @Event() trigger: EventEmitter<any>
+  async triggerAction(event: MouseEvent) {
+    // this.trigger.emit();
+    if (this.isDisabled || (this.getType() === 'submit' && !this.triggerAction)) return;
+    if (!this.triggerAction) {
+      throw new Error('@triggerAction params is required for PixButton !');
+    }
+    try {
+      this.isTriggering = true;
+      await this.triggerAction(event);
+    } finally {
+      this.isTriggering = false;
+    }
   }
 
  /* private getText(): string {
@@ -24,8 +51,10 @@ export class PixButton {
     return (<div>
       <button
         type={this.getType()}
-        disabled={this.isDisabled}
         class={'primary'}
+        onClick={ev => this.triggerAction(ev)}
+        disabled={this.getIsDisabled()}
+        aria-disabled={this.getIsDisabled()}
       >
         <slot name="content"/>
       </button>

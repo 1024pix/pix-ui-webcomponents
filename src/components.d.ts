@@ -22,6 +22,7 @@ export namespace Components {
     }
     interface PixButton {
         "isDisabled": boolean;
+        "isLoading": boolean;
         "type": string;
     }
 }
@@ -60,6 +61,7 @@ declare namespace LocalJSX {
     }
     interface PixButton {
         "isDisabled"?: boolean;
+        "isLoading"?: boolean;
         "type"?: string;
     }
     interface IntrinsicElements {
