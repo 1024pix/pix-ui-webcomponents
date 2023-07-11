@@ -2,9 +2,8 @@ import {Component, Prop, Method, h, Watch, State } from '@stencil/core';
 
 @Component({
   tag: 'pix-button',
-  styleUrl: 'pix-button.css',
-  shadow: true,
-  // scoped: true,
+  // shadow: true,
+  scoped: true,
 })
 export class PixButton {
 

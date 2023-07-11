@@ -1,0 +1,6 @@
+@import "./colors.css";
+@import "pix-button.css";
+
+:root {
+    --color-primary: white;
+}
