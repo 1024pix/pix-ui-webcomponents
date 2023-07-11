@@ -11,17 +11,11 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
 
   &--shape-rounded {
     border-radius: 25px;
-  }
-
-  &--shape-squircle {
-    border-radius: 4px;
-  }
-
-  &--size-big {
-    padding: 12px 24px;
   }
 
   &--size-small.pix-button--shape-rounded {
@@ -37,7 +31,7 @@
     cursor: not-allowed;
   }
 
-  &--background-blue {
+  & {
     background-color: var(--pix-color-primary);
 
     &:not(.pix-button--disabled) {
