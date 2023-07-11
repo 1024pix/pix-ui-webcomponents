@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  color: var(--pix-neutral-60);
+  color: var(--pix-color-neutral-60);
 
   &:disabled {
     opacity: 0.5;
@@ -16,26 +16,26 @@
   }
 
   &:hover:enabled {
-    background-color: var(--pix-neutral-20);
+    background-color: var(--pix-color-neutral-20);
     outline: 0;
-    color: var(--pix-neutral-60);
+    color: var(--pix-color-neutral-60);
   }
 
   &:focus:enabled {
-    background-color: var(--pix-neutral-60);
-    outline: 1px solid var(--pix-neutral-0);
+    background-color: var(--pix-color-neutral-60);
+    outline: 1px solid var(--pix-color-neutral-0);
     outline-offset: -3px;
-    color: var(--pix-neutral-0);
+    color: var(--pix-color-neutral-0);
   }
 
   &:active:enabled {
-    background-color: var(--pix-neutral-22);
+    background-color: var(--pix-color-neutral-22);
     outline: 0;
-    color: var(--pix-neutral-60);
+    color: var(--pix-color-neutral-60);
   }
 
   &--background {
-    background-color: var(--pix-neutral-10);
+    background-color: var(--pix-color-neutral-10);
   }
 
   &--small {

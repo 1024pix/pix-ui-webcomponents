@@ -43,8 +43,8 @@
   }
 
   &:focus-visible {
-    background-color: var(--pix-warning-40);
-    border-bottom: var(--pix-neutral-100) solid 2px;
+    background-color: var(--pix-color-warning-40);
+    border-bottom: var(--pix-color-neutral-100) solid 2px;
 
     .pix-return-to__text {
       padding-right: 6px;
@@ -69,14 +69,14 @@
   }
 
   &--white {
-    @include coloriseLink(var(--pix-pix-neutral-10), var(--pix-neutral-0), var(--pix-neutral-0));
+    @include coloriseLink(var(--pix-pix-neutral-10), var(--pix-color-neutral-0), var(--pix-color-neutral-0));
   }
 
   &--black {
-    @include coloriseLink(var(--pix-neutral-80), var(--pix-neutral-110), var(--pix-neutral-60));
+    @include coloriseLink(var(--pix-color-neutral-80), var(--pix-color-neutral-110), var(--pix-color-neutral-60));
   }
 
   &--blue {
-    @include coloriseLink(var(--pix-communication-dark), var(--pix-primary-60), var(--pix-communication-dark));
+    @include coloriseLink(var(--pix-communication-dark), var(--pix-color-primary-60), var(--pix-communication-dark));
   }
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
 
   &__label {
-    color: var(--pix-neutral-90);
+    color: var(--pix-color-neutral-90);
 
     @extend %pix-body-m;
   }
@@ -11,7 +11,7 @@
   &__button {
     width: fit-content;
     background-color: transparent;
-    border: 1px solid var(--pix-neutral-30);
+    border: 1px solid var(--pix-color-neutral-30);
     border-radius: 4px;
     padding: var(--pix-spacing-xxs);
     margin-top: var(--pix-spacing-xxs);
@@ -22,14 +22,14 @@
     display: inline-block;
     border-radius: 4px;
     padding: var(--pix-spacing-xs);
-    color: var(--pix-neutral-70);
+    color: var(--pix-color-neutral-70);
 
     @extend %pix-body-s;
   }
 
   &__off {
-    background-color: var(--pix-neutral-45);
-    color: var(--pix-neutral-0);
+    background-color: var(--pix-color-neutral-45);
+    color: var(--pix-color-neutral-0);
   }
 
   &--inline {
@@ -50,8 +50,8 @@
   &--pressed {
     .pix-toggle {
       &__on {
-        background-color: var(--pix-neutral-45);
-        color: var(--pix-neutral-0);
+        background-color: var(--pix-color-neutral-45);
+        color: var(--pix-color-neutral-0);
       }
 
       &__off {

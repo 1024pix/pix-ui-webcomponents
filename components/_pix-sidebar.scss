@@ -27,7 +27,7 @@ $button-margin: 16px;
   height: 100%;
   max-width: 320px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-  background: var(--pix-neutral-0);
+  background: var(--pix-color-neutral-0);
   transform: translate(0);
   transition: transform 0.3s ease-in-out;
 
@@ -36,7 +36,7 @@ $button-margin: 16px;
   }
 
   &__header {
-    border-bottom: 1px solid var(--pix-neutral-20);
+    border-bottom: 1px solid var(--pix-color-neutral-20);
     padding: $sidebar-padding;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@ $button-margin: 16px;
     @extend %pix-title-s;
 
     margin-bottom: 0;
-    color: var(--pix-neutral-90);
+    color: var(--pix-color-neutral-90);
     padding-right: $mobile-close-button-size + $space-between-title-and-close-button;
 
     @include device-is('tablet') {
@@ -71,6 +71,6 @@ $button-margin: 16px;
 
   &__footer {
     padding: $sidebar-padding;
-    border-top: 1px solid var(--pix-neutral-20);
+    border-top: 1px solid var(--pix-color-neutral-20);
   }
 }

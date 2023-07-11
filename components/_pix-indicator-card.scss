@@ -1,10 +1,10 @@
 .indicator-card {
   display: flex;
   width: 100%;
-  background-color: var(--pix-neutral-0);
+  background-color: var(--pix-color-neutral-0);
   border-radius: 8px;
   min-height: 112px;
-  box-shadow: 0 4px 8px rgba(var(--pix-neutral-110), 0.05);
+  box-shadow: 0 4px 8px rgba(var(--pix-color-neutral-110), 0.05);
   padding: 0;
 
   &__icon {
@@ -16,23 +16,23 @@
     font-size: 2.5rem;
 
     &--grey {
-      color: var(--pix-neutral-60);
-      background-color: var(--pix-neutral-5);  
+      color: var(--pix-color-neutral-60);
+      background-color: var(--pix-color-neutral-5);  
     }
 
     &--blue {
-      color: var(--pix-primary-60);
-      background-color: var(--pix-primary-5);  
+      color: var(--pix-color-primary-60);
+      background-color: var(--pix-color-primary-5);  
     }
 
     &--green {
-      color: var(--pix-success-60);
-      background-color: var(--pix-success-5);  
+      color: var(--pix-color-success-60);
+      background-color: var(--pix-color-success-5);  
     }
 
     &--purple {
-      color: var(--pix-tertiary-60);
-      background-color: var(--pix-tertiary-5);  
+      color: var(--pix-color-tertiary-60);
+      background-color: var(--pix-color-tertiary-5);  
     }
   }
 
@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--pix-neutral-60);
+    color: var(--pix-color-neutral-60);
     padding: var(--pix-spacing-s) var(--pix-spacing-m);
   }
 
@@ -74,7 +74,7 @@
   }
 
   &__tooltip-icon {
-    color: var(--pix-neutral-30);
+    color: var(--pix-color-neutral-30);
     margin: 0 var(--pix-spacing-xs);
   }
 }

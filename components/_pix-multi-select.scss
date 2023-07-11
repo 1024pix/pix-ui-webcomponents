@@ -12,16 +12,16 @@
   flex-direction: row;
   align-items: center;
   position: relative;
-  border: 1px var(--pix-neutral-40) solid;
+  border: 1px var(--pix-color-neutral-40) solid;
   height: 36px;
   padding: 0 32px 0 16px;
   width: 100%;
-  background-color: var(--pix-neutral-0);
+  background-color: var(--pix-color-neutral-0);
   border-radius: 4px;
   outline: none;
   font-size: 0.875rem;
   cursor: pointer;
-  color: var(--pix-neutral-90);
+  color: var(--pix-color-neutral-90);
 
   @include hoverFormElement();
   @include focusWithinFormElement();
@@ -31,7 +31,7 @@
   }
 
   &__search-icon {
-    color: var(--pix-neutral-30);
+    color: var(--pix-color-neutral-30);
   }
 
   &__title {
@@ -49,14 +49,14 @@
     padding: 0 10px;
     border-radius: 3px;
     font-size: 0.875rem;
-    color: var(--pix-neutral-90);
+    color: var(--pix-color-neutral-90);
     background: transparent;
   }
 
   &__dropdown-icon {
     @extend %pix-body-s;
 
-    color: var(--pix-neutral-60);
+    color: var(--pix-color-neutral-60);
     right: 10px;
     top: calc(50% - 6px);
     position: absolute;
@@ -68,7 +68,7 @@
   width: 100%;
   margin: 0;
   z-index: 200;
-  background-color: var(--pix-neutral-0);
+  background-color: var(--pix-color-neutral-0);
   position: absolute;
   border-top: none;
   border-radius: 0 0 4px 4px;
@@ -95,17 +95,17 @@
 
   &::-webkit-scrollbar-track {
     border-radius: 4px;
-    border: 1px solid var(--pix-neutral-20);
-    background: var(--pix-neutral-0);
+    border: 1px solid var(--pix-color-neutral-20);
+    background: var(--pix-color-neutral-0);
   }
 
   &::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background: var(--pix-neutral-30);
+    background: var(--pix-color-neutral-30);
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: var(--pix-neutral-35);
+    background: var(--pix-color-neutral-35);
   }
 
   li.pix-multi-select-list__item {
@@ -116,7 +116,7 @@
     &:focus {
       outline: none;
       cursor: pointer;
-      background-color: var(--pix-neutral-10);
+      background-color: var(--pix-color-neutral-10);
     }
 
     &--no-result {

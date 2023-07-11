@@ -14,12 +14,12 @@
   display: none;
   opacity: 0;
   pointer-events: none;
-  background-color: var(--pix-neutral-100);
+  background-color: var(--pix-color-neutral-100);
   position: absolute;
   z-index: 100;
   padding: 8px 16px;
   left: auto;
-  color: var(--pix-neutral-0);
+  color: var(--pix-color-neutral-0);
   font-size: 0.875rem;
   border-radius: 6px;
   line-height: 1.4rem;
@@ -47,15 +47,15 @@
 
   &--light {
     font-weight: var(--pix-font-medium);
-    background-color: var(--pix-neutral-0);
-    color: var(--pix-neutral-60);
-    box-shadow: 0 6px 24px 0 rgba(var(--pix-neutral-70), 0.14);
+    background-color: var(--pix-color-neutral-0);
+    color: var(--pix-color-neutral-60);
+    box-shadow: 0 6px 24px 0 rgba(var(--pix-color-neutral-70), 0.14);
 
     &::before {
       border-width: 0;
       height: 8px;
       width: 8px;
-      background-color: var(--pix-neutral-0);
+      background-color: var(--pix-color-neutral-0);
     }
   }
 }
@@ -66,13 +66,13 @@
   &::before {
     top: calc(50% - 5px); // 50% is the height of the parent and 5px the height of the triangle
     left: -10px; // 10px is width of the ::before elmt
-    border-color: transparent var(--pix-neutral-100) transparent transparent;
+    border-color: transparent var(--pix-color-neutral-100) transparent transparent;
   }
 
   &.pix-tooltip__content--light::before {
     left: -5px;
     transform: rotate(315deg);
-    border-color: var(--pix-neutral-40) transparent transparent var(--pix-neutral-40);
+    border-color: var(--pix-color-neutral-40) transparent transparent var(--pix-color-neutral-40);
   }
 }
 
@@ -84,13 +84,13 @@
   &::before {
     top: 100%;
     left: calc(50% - 5px);
-    border-color: var(--pix-neutral-100) transparent transparent transparent;
+    border-color: var(--pix-color-neutral-100) transparent transparent transparent;
   }
 
   &.pix-tooltip__content--light::before {
     top: calc(100% - 5px);
     transform: rotate(225deg);
-    border-color: var(--pix-neutral-40) transparent transparent var(--pix-neutral-40);
+    border-color: var(--pix-color-neutral-40) transparent transparent var(--pix-color-neutral-40);
   }
 }
 
@@ -101,14 +101,14 @@
   &::before {
     top: 100%;
     left: calc(100% - 27px);
-    border-color: var(--pix-neutral-100) transparent transparent transparent;
+    border-color: var(--pix-color-neutral-100) transparent transparent transparent;
   }
 
   &.pix-tooltip__content--light::before {
     top: calc(100% - 5px);
     left: calc(100% - 26px);
     transform: rotate(225deg);
-    border-color: var(--pix-neutral-40) transparent transparent var(--pix-neutral-40);
+    border-color: var(--pix-color-neutral-40) transparent transparent var(--pix-color-neutral-40);
   }
 }
 
@@ -118,13 +118,13 @@
 
   &::before {
     top: 100%;
-    border-color: var(--pix-neutral-100) transparent transparent transparent;
+    border-color: var(--pix-color-neutral-100) transparent transparent transparent;
   }
 
   &.pix-tooltip__content--light::before {
     top: calc(100% - 5px);
     transform: rotate(225deg);
-    border-color: var(--pix-neutral-40) transparent transparent var(--pix-neutral-40);
+    border-color: var(--pix-color-neutral-40) transparent transparent var(--pix-color-neutral-40);
   }
 }
 
@@ -136,13 +136,13 @@
   &::before {
     top: -10px;
     left: calc(50% - 5px);
-    border-color: transparent transparent var(--pix-neutral-100) transparent;
+    border-color: transparent transparent var(--pix-color-neutral-100) transparent;
   }
 
   &.pix-tooltip__content--light::before {
     top: -5px;
     transform: rotate(45deg);
-    border-color: var(--pix-neutral-40) transparent transparent var(--pix-neutral-40);
+    border-color: var(--pix-color-neutral-40) transparent transparent var(--pix-color-neutral-40);
   }
 }
 
@@ -153,14 +153,14 @@
   &::before {
     top: -10px;
     left: calc(100% - 27px);
-    border-color: transparent transparent var(--pix-neutral-100) transparent;
+    border-color: transparent transparent var(--pix-color-neutral-100) transparent;
   }
 
   &.pix-tooltip__content--light::before {
     top: -5px;
     left: calc(100% - 26px);
     transform: rotate(45deg);
-    border-color: var(--pix-neutral-40) transparent transparent var(--pix-neutral-40);
+    border-color: var(--pix-color-neutral-40) transparent transparent var(--pix-color-neutral-40);
   }
 }
 
@@ -170,13 +170,13 @@
 
   &::before {
     top: -10px;
-    border-color: transparent transparent var(--pix-neutral-100) transparent;
+    border-color: transparent transparent var(--pix-color-neutral-100) transparent;
   }
 
   &.pix-tooltip__content--light::before {
     top: -5px;
     transform: rotate(45deg);
-    border-color: var(--pix-neutral-40) transparent transparent var(--pix-neutral-40);
+    border-color: var(--pix-color-neutral-40) transparent transparent var(--pix-color-neutral-40);
   }
 }
 
@@ -186,12 +186,12 @@
   &::before {
     top: calc(50% - 5px);
     right: -10px;
-    border-color: transparent transparent transparent var(--pix-neutral-100);
+    border-color: transparent transparent transparent var(--pix-color-neutral-100);
   }
 
   &.pix-tooltip__content--light::before {
     right: -5px;
     transform: rotate(135deg);
-    border-color: var(--pix-neutral-40) transparent transparent var(--pix-neutral-40);
+    border-color: var(--pix-color-neutral-40) transparent transparent var(--pix-color-neutral-40);
   }
 }

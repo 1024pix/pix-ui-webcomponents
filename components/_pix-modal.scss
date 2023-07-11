@@ -43,14 +43,14 @@ $button-margin: 16px;
     ); // Horizontal margin sets here to have extra space for the .pix-modal__overlay::after on mobile
 
   text-align: initial;
-  background-color: var(--pix-neutral-10);
+  background-color: var(--pix-color-neutral-10);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   overflow: hidden;
 
   &__header {
-    background: var(--pix-neutral-0);
-    border-bottom: 1px solid var(--pix-neutral-20);
+    background: var(--pix-color-neutral-0);
+    border-bottom: 1px solid var(--pix-color-neutral-20);
     padding: $modal-padding;
     display: flex;
     align-items: flex-start;
@@ -71,7 +71,7 @@ $button-margin: 16px;
     @extend %pix-title-xs;
 
     margin-bottom: 0;
-    color: var(--pix-neutral-90);
+    color: var(--pix-color-neutral-90);
     padding-right: $mobile-close-button-size + $space-between-title-and-close-button;
 
     @include device-is('tablet') {
@@ -83,7 +83,7 @@ $button-margin: 16px;
     @extend %pix-body-s;
 
     padding: $modal-padding;
-    color: var(--pix-neutral-90);
+    color: var(--pix-color-neutral-90);
 
     p:last-child {
       margin-bottom: 0;

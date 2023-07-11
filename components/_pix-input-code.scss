@@ -30,10 +30,10 @@
     height: 44px;
     width: 38px;
     padding: 10px 12px 8px;
-    background-color: var(--pix-neutral-10);
-    border: 1.4px solid var(--pix-neutral-50);
+    background-color: var(--pix-color-neutral-10);
+    border: 1.4px solid var(--pix-color-neutral-50);
     font-size: 1.25rem;
-    color: var(--pix-neutral-90);
+    color: var(--pix-color-neutral-90);
     border-radius: 4px;
     text-align: center;
     outline: none;
@@ -45,17 +45,17 @@
     }
 
     &::placeholder {
-      color: var(--pix-neutral-50);
+      color: var(--pix-color-neutral-50);
     }
 
     &:hover {
-      border-color: var(--pix-neutral-70);
+      border-color: var(--pix-color-neutral-70);
     }
 
     &:active,
     &:focus {
-      border-color: var(--pix-primary);
-      background-color: var(--pix-neutral-0);
+      border-color: var(--pix-color-primary);
+      background-color: var(--pix-color-neutral-0);
 
       &::placeholder {
         opacity: 0;
@@ -63,7 +63,7 @@
     }
 
     &.filled {
-      background-color: var(--pix-neutral-0);
+      background-color: var(--pix-color-neutral-0);
     }
   }
 }

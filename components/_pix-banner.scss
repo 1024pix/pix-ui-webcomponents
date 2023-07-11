@@ -27,80 +27,80 @@
   }
 
   &--information {
-    background-color: var(--pix-primary-5);
-    color: var(--pix-primary-70);
+    background-color: var(--pix-color-primary-5);
+    color: var(--pix-color-primary-70);
 
     .pix-icon-button {
-      background-color: var(--pix-primary-5);
-      color: var(--pix-primary-70);
+      background-color: var(--pix-color-primary-5);
+      color: var(--pix-color-primary-70);
 
       &:hover:enabled,
       &:focus:enabled,
       &:active:enabled {
-        background-color: var(--pix-primary-10);
-        color: var(--pix-primary-70);
+        background-color: var(--pix-color-primary-10);
+        color: var(--pix-color-primary-70);
       }
 
       &:focus:enabled {
-        outline-color: var(--pix-primary-70);
+        outline-color: var(--pix-color-primary-70);
       }
     }
   }
 
   &--warning {
-    background-color: var(--pix-warning-5);
-    color: var(--pix-warning-70);
+    background-color: var(--pix-color-warning-5);
+    color: var(--pix-color-warning-70);
 
     .pix-icon-button {
-      background-color: var(--pix-warning-5);
-      color: var(--pix-warning-70);
+      background-color: var(--pix-color-warning-5);
+      color: var(--pix-color-warning-70);
 
       &:hover:enabled,
       &:focus:enabled,
       &:active:enabled {
-        background-color: var(--pix-warning-10);
-        color: var(--pix-warning-70);
+        background-color: var(--pix-color-warning-10);
+        color: var(--pix-color-warning-70);
       }
 
       &:focus:enabled {
-        outline-color: var(--pix-warning-70);
+        outline-color: var(--pix-color-warning-70);
       }
     }
   }
 
   &--error {
-    background-color: var(--pix-error-5);
-    color: var(--pix-error-70);
+    background-color: var(--pix-color-error-5);
+    color: var(--pix-color-error-70);
 
     .pix-icon-button {
-      background-color: var(--pix-error-5);
-      color: var(--pix-error-70);
+      background-color: var(--pix-color-error-5);
+      color: var(--pix-color-error-70);
 
       &:hover:enabled,
       &:focus:enabled,
       &:active:enabled {
-        background-color: var(--pix-error-10);
-        color: var(--pix-error-70);
+        background-color: var(--pix-color-error-10);
+        color: var(--pix-color-error-70);
       }
 
       &:focus:enabled {
-        outline-color: var(--pix-error-70);
+        outline-color: var(--pix-color-error-70);
       }
     }
   }
 
   &--communication {
-    background-color: var(--pix-primary);
-    color: var(--pix-neutral-0);
+    background-color: var(--pix-color-primary);
+    color: var(--pix-color-neutral-0);
 
     &-orga {
-      background-color: var(--pix-secondary-orga-80);
-      color: var(--pix-neutral-0);
+      background-color: var(--pix-color-secondary-orga-80);
+      color: var(--pix-color-neutral-0);
     }
 
     &-certif {
-      background-color: var(--pix-secondary-certif-50);
-      color: var(--pix-neutral-0);
+      background-color: var(--pix-color-secondary-certif-50);
+      color: var(--pix-color-neutral-0);
     }
   }
 }
