@@ -1,5 +1,4 @@
-
-    .pix-button {
+ .pix-button {
       color: var(--pix-neutral-0);
       font-size: 0.875rem;
       font-weight: var(--font-medium);
@@ -166,6 +165,5 @@
 .pix-button--background-blue {
       background: var(--pix-primary-certif-gradient);
       color: var(--pix-primary-5);
-      border: solid var(--pix-environment-dark) 2rem;
 }
  

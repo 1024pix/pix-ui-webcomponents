@@ -1,7 +1,8 @@
-import {LitElement, html, css, unsafeCSS} from 'lit';
+import { LitElement, html, css, unsafeCSS, nothing } from 'lit';
 
 import style from "../colors.css?inline";
-import buttonStyle from "../pix-button.css?inline";
+import buttonBaseStyle from "../pix-button.css?inline";
+import buttonStyle from "../_pix-button.css?inline";
 
 export class PixButton extends LitElement {
   static properties = {
@@ -29,7 +30,8 @@ export class PixButton extends LitElement {
      type: Boolean,
      reflect: true
    },
-   isLoading: {type: Boolean},
+   isLoading: {type: Boolean, reflect: true},
+   icon: {type: String, reflect: true},
    triggerAction: {type: Object, reflect: true},
    isTriggering: {type: Boolean},
    classNames: {type: Array},
@@ -38,6 +40,7 @@ export class PixButton extends LitElement {
   // Define scoped styles right with your component, in plain CSS
   static styles = [
     unsafeCSS(style),
+    unsafeCSS(buttonBaseStyle),
     unsafeCSS(buttonStyle),
     css`
     :host {
@@ -67,12 +70,12 @@ export class PixButton extends LitElement {
     ];
   }
 
-  getIsLoading() {
+  get isLoadingOrTriggering() {
     return this.isLoading || this.isTriggering;
   }
 
   getIsDisabled() {
-    return this.getIsLoading() || this.isDisabled;
+    return this.isLoadingOrTriggering || this.isDisabled;
   }
 
   updateClassNames() {
@@ -104,17 +107,32 @@ export class PixButton extends LitElement {
   }
   // Render the UI as a function of component state
   render() {
-    return html`
-      <button
+   let template;
+    if (this.isLoadingOrTriggering) {
+      template = html`
+        <div class="loader loader--blue">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+        </div>
+        <span class="loader__not-visible-text"><slot name="text"/></span>
+      `
+    } else {
+      template = html`<slot name="text"/>`
+    }
+
+
+    return html`<button
         @click=${this._triggerAction}
         type=${this.type}
         class=${this.updateClassNames()}
         ?disabled=${this.getIsDisabled()}
         ?aria-disabled=${this.getIsDisabled()}
       >
-       <slot name="text"/>
-      </button>
-      `;
+        ${template} 
+    </button>`
+
   }
 }
+
 customElements.define('pix-button', PixButton);

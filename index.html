@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./colors.css">
 </head>
 <body>
-<pix-button id="mon-button">
+<pix-button id="mon-button" >
     <span  slot="text">Coucou</span>
 </pix-button>
 </body>
@@ -17,5 +17,7 @@
     await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000));
   }
   pixButton.isDisabled = false;
+  // pixButton.isLoading = true;
+  pixButton.icon = 'true';
 </script>
 </html>
