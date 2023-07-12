@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
     <link rel="stylesheet" href="/build/pix-ui-webcomponents.css" />
-    <link rel="stylesheet" href="./global/global.css" />
     <script type="module" src="/build/pix-ui-webcomponents.esm.js"></script>
     <script nomodule src="/build/pix-ui-webcomponents.js"></script>
   </head>
   <body>
-     <pix-button type="submit" id="mon-submit" background-color="green" shape="rounded" text="Coucou">
-      <!-- <span slot="text">Coucou</span> -->
+     <pix-button type="submit" id="mon-submit" background-color="green" shape="rounded" >
+       <span slot="text">Coucou</span>
     </pix-button>
   <script>
     const pixButton = document.querySelector('#mon-submit');
     pixButton.triggerAction = async () => {
-      await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 30000));
+      await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000));
     }
     pixButton.isDisabled = false;
     // pixButton.isLoading = true;

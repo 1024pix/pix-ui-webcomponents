@@ -6,7 +6,6 @@ export declare class PixButton {
   isBorderVisible: boolean;
   isDisabled: boolean;
   isLoading: boolean;
-  text: string;
   triggerAction: Function;
   isTriggering: boolean;
   private getIsLoading;

@@ -28,7 +28,6 @@ export namespace Components {
         "isLoading": boolean;
         "shape": string;
         "size": string;
-        "text": string;
         "triggerAction": Function;
         "type": string;
     }
@@ -73,7 +72,6 @@ declare namespace LocalJSX {
         "isLoading"?: boolean;
         "shape"?: string;
         "size"?: string;
-        "text"?: string;
         "triggerAction"?: Function;
         "type"?: string;
     }

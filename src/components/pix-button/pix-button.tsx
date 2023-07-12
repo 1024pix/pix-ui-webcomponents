@@ -2,9 +2,9 @@ import {Component, Prop, Method, h, Watch, State, Fragment } from '@stencil/core
 
 @Component({
   tag: 'pix-button',
-  // styleUrl: './global/global.css',
-  // shadow: true,
-  scoped: true,
+  styleUrl: 'pix-button.css',
+  shadow: true,
+  // scoped: true,
 })
 export class PixButton {
 
@@ -21,8 +21,6 @@ export class PixButton {
   @Prop() isDisabled: boolean;
 
   @Prop() isLoading: boolean;
-
-  @Prop() text: string;
 
   @Prop() triggerAction: Function;
 
@@ -84,9 +82,9 @@ export class PixButton {
   //         <div class="bounce3"></div>
   //         </div>
   //         <span class="loader__not-visible-text"><slot name="text"/></span>
-  //       </div>  
-  //     ) 
-  //   } 
+  //       </div>
+  //     )
+  //   }
   //   return <slot name="text"/>
   // }
 
@@ -100,11 +98,11 @@ export class PixButton {
           <div class="bounce2"></div>
           <div class="bounce3"></div>
           </div>
-          <span class="loader__not-visible-text">{this.text}</span>
-        </Fragment>  
-      ) 
+          <span class="loader__not-visible-text"><slot name="text"></slot></span>
+        </Fragment>
+      )
     } else {
-      template = <Fragment>{this.text}</Fragment>
+      template = <Fragment><slot name="text"></slot></Fragment>
     }
 
     return (
