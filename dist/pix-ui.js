@@ -666,6 +666,7 @@ class J extends E {
         ?aria-disabled=${this.getIsDisabled()}
       >
         ${t} 
+        <slot name="icon"></slot>
     </button>`;
   }
 }

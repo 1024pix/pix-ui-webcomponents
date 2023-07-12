@@ -34,6 +34,7 @@
         ?aria-disabled=${this.getIsDisabled()}
       >
         ${t} 
+        <slot name="icon"></slot>
     </button>`}}G(H,"properties",{type:{type:String,reflect:!0},size:{type:String,reflect:!0},shape:{type:String,reflect:!0},backgroundColor:{type:String,reflect:!0},isBorderVisible:{type:Boolean,reflect:!0},isDisabled:{type:Boolean,reflect:!0},isLoading:{type:Boolean,reflect:!0},icon:{type:String,reflect:!0},triggerAction:{type:Object,reflect:!0},isTriggering:{type:Boolean},classNames:{type:Array}}),G(H,"styles",[P(St),P(wt),P(Dt),xt`
     :host {
       color: blue;

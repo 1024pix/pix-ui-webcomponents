@@ -130,6 +130,7 @@ export class PixButton extends LitElement {
         ?aria-disabled=${this.getIsDisabled()}
       >
         ${template} 
+        <slot name="icon"></slot>
     </button>`
 
   }
