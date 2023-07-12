@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
     <link rel="stylesheet" href="/build/pix-ui-webcomponents.css" />
+    <link rel="stylesheet" href="./global/global.css" />
     <script type="module" src="/build/pix-ui-webcomponents.esm.js"></script>
     <script nomodule src="/build/pix-ui-webcomponents.js"></script>
   </head>
@@ -12,7 +13,7 @@
     <pix-button id="mon-button">
       Coucou button
     </pix-button>
-     <pix-button type="submit" id="mon-submit">
+     <pix-button type="submit" id="mon-submit" background-color="green" shape="rounded">
       Coucou submit
     </pix-button>
   <script>
@@ -21,6 +22,7 @@
       await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000));
     }
     pixButton.isDisabled = false;
+    // pixButton.backgroundColor = 'green';
   </script>
   </body>
 </html>

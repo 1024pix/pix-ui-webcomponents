@@ -1,10 +1,10 @@
 .pix-button {
-  color: --pix-neutral-0;
+  color: var(--pix-neutral-0);
   font-size: 0.875rem;
-  font-weight: --font-medium;
+  font-weight: var(--font-medium);
   white-space: nowrap;
   cursor: pointer;
-  background-color: --pix-primary;
+  background-color: var(--pix-secondary);
   border: 1px solid transparent;
   outline: none;
   display: flex;
@@ -33,73 +33,74 @@
   cursor: not-allowed;
 }
 .pix-button--background-blue {
-  background-color: --pix-primary;
+  background-color: var(--pix-primary);
 }
 .pix-button--background-blue:not(.pix-button--disabled):hover {
-  background-color: --pix-primary-60;
+  background-color: var(--pix-primary-60);
 }
 .pix-button--background-blue:not(.pix-button--disabled):focus, .pix-button--background-blue:not(.pix-button--disabled):focus-visible {
-  background-color: --pix-primary-60;
-  outline: 1px solid --pix-neutral-0;
+  background-color: var(--pix-primary-60);
+  outline: 1px solid v--pix-neutral-0;
   outline-offset: -4px;
 }
 .pix-button--background-blue:not(.pix-button--disabled):active {
-  background-color: --pix-primary-70;
+  background-color: var(--pix-primary-70);
   outline: none;
 }
 .pix-button--background-green {
-  background-color: --pix-success-60;
+  /* background-color: var(--pix-success-60); */
+  background-color: #f0f;
 }
 .pix-button--background-green:not(.pix-button--disabled):hover {
-  background-color: --pix-success-70;
+  background-color: var(--pix-success-70);
 }
 .pix-button--background-green:not(.pix-button--disabled):focus, .pix-button--background-green:not(.pix-button--disabled):focus-visible {
-  background-color: --pix-success-70;
-  outline: 1px solid --pix-neutral-0;
+  background-color: var(--pix-success-70);
+  outline: 1px solid var(--pix-neutral-0);
   outline-offset: -4px;
 }
 .pix-button--background-green:not(.pix-button--disabled):active {
-  background-color: --pix-success-80;
+  background-color: var(--pix-success-80);
   outline: none;
 }
 .pix-button--background-yellow {
-  color: --pix-neutral-100;
-  background-color: --pix-warning-40;
+  color: var(--pix-neutral-100);
+  background-color: var(--pix-warning-40);
 }
 .pix-button--background-yellow:not(.pix-button--disabled):hover {
-  background-color: --pix-warning-50;
+  background-color: var(--pix-warning-50);
 }
 .pix-button--background-yellow:not(.pix-button--disabled):focus, .pix-button--background-yellow:not(.pix-button--disabled):focus-visible {
-  background-color: --pix-warning-50;
-  outline: 1px solid --pix-neutral-0;
+  background-color: var(--pix-warning-50);
+  outline: 1px solid var(--pix-neutral-0);
   outline-offset: -4px;
 }
 .pix-button--background-yellow:not(.pix-button--disabled):active {
-  background-color: --pix-warning-60;
+  background-color: var(--pix-warning-60);
   outline: none;
 }
 .pix-button--background-red {
-  color: --pix-neutral-0;
-  background-color: --pix-error-70;
+  color: var(--pix-neutral-0);
+  background-color: var(--pix-error-70);
 }
 .pix-button--background-red:not(.pix-button--disabled):hover {
-  background-color: --pix-error-80;
+  background-color: var(--pix-error-80);
 }
 .pix-button--background-red:not(.pix-button--disabled):focus, .pix-button--background-red:not(.pix-button--disabled):focus-visible {
-  background-color: --pix-error-70;
-  outline: 1px solid --pix-neutral-0;
+  background-color: var(--pix-error-70);
+  outline: 1px solid var(--pix-neutral-0);
   outline-offset: -4px;
 }
 .pix-button--background-red:not(.pix-button--disabled):active {
-  background-color: --pix-error-90;
+  background-color: var(--pix-error-90);
   outline: none;
 }
 .pix-button--background-grey {
-  color: --pix-neutral-90;
-  background-color: --pix-neutral-20;
+  color: var(--pix-neutral-90);
+  background-color: var(--pix-neutral-20);
 }
 .pix-button--background-grey:not(.pix-button--disabled):hover {
-  background-color: --pix-neutral-22;
+  background-color: var(--pix-neutral-22);
 }
 .pix-button--background-grey:not(.pix-button--disabled):focus, .pix-button--background-grey:not(.pix-button--disabled):focus-visible {
   background-color: --pix-neutral-90;

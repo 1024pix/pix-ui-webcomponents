@@ -2,6 +2,7 @@ import {Component, Prop, Method, h, Watch, State } from '@stencil/core';
 
 @Component({
   tag: 'pix-button',
+  // styleUrl: './global/global.css',
   // shadow: true,
   scoped: true,
 })
@@ -70,10 +71,6 @@ export class PixButton {
       this.isTriggering = false;
     }
   }
-
- /* private getText(): string {
-    return format(this.first, this.middle, this.last);
-  }*/
 
   render() {
     return (

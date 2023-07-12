@@ -1,9 +1,12 @@
-import { proxyCustomElement, HTMLElement, h } from '@stencil/core/internal/client';
+'use strict';
 
-const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTMLElement {
-  constructor() {
-    super();
-    this.__registerHost();
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const index = require('./index-3a848691.js');
+
+const PixButton = class {
+  constructor(hostRef) {
+    index.registerInstance(this, hostRef);
     this.type = "button";
     this.size = 'big';
     this.shape = 'squircle';
@@ -50,42 +53,15 @@ const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTM
     }
   }
   render() {
-    return (h("button", { onClick: this._triggerAction.bind(this), type: this.type, class: this.updateClassNames(), disabled: this.getIsDisabled(), "aria-disabled": this.getIsDisabled() }, h("slot", null)));
+    return (index.h("button", { onClick: this._triggerAction.bind(this), type: this.type, class: this.updateClassNames(), disabled: this.getIsDisabled(), "aria-disabled": this.getIsDisabled() }, index.h("slot", null)));
   }
   static get watchers() { return {
     "isLoading": ["getIsLoading", "getIsDisabled", "updateClassNames"],
     "isTriggering": ["getIsLoading", "getIsDisabled", "updateClassNames"],
     "isDisabled": ["getIsDisabled", "updateClassNames"]
   }; }
-}, [6, "pix-button", {
-    "type": [1],
-    "size": [1],
-    "shape": [1],
-    "backgroundColor": [1, "background-color"],
-    "isBorderVisible": [4, "is-border-visible"],
-    "isDisabled": [4, "is-disabled"],
-    "isLoading": [4, "is-loading"],
-    "triggerAction": [16],
-    "isTriggering": [32],
-    "_triggerAction": [64]
-  }]);
-function defineCustomElement$1() {
-  if (typeof customElements === "undefined") {
-    return;
-  }
-  const components = ["pix-button"];
-  components.forEach(tagName => { switch (tagName) {
-    case "pix-button":
-      if (!customElements.get(tagName)) {
-        customElements.define(tagName, PixButton$1);
-      }
-      break;
-  } });
-}
+};
 
-const PixButton = PixButton$1;
-const defineCustomElement = defineCustomElement$1;
+exports.pix_button = PixButton;
 
-export { PixButton, defineCustomElement };
-
-//# sourceMappingURL=pix-button.js.map
+//# sourceMappingURL=pix-button.cjs.entry.js.map

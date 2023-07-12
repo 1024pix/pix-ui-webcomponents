@@ -1,24 +1,16 @@
-import { EventEmitter } from '../../stencil-public-runtime';
 export declare class PixButton {
-  /**
-   * The first name
-   */
-  first: string;
-  /**
-   * The middle name
-   */
-  middle: string;
-  /**
-   * The last name
-   */
-  last: string;
-  /**
-   * disable button
-   */
+  type: string;
+  size: string;
+  shape: string;
+  backgroundColor: string;
+  isBorderVisible: boolean;
   isDisabled: boolean;
-  click: EventEmitter<any>;
-  handleClick(ev: any): void;
-  testClick(e: any): CustomEvent<any>;
-  private getText;
+  isLoading: boolean;
+  triggerAction: Function;
+  isTriggering: boolean;
+  private getIsLoading;
+  private getIsDisabled;
+  updateClassNames(): string;
+  _triggerAction(event: MouseEvent): Promise<void>;
   render(): any;
 }

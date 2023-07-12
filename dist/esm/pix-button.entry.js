@@ -1,9 +1,8 @@
-import { proxyCustomElement, HTMLElement, h } from '@stencil/core/internal/client';
+import { r as registerInstance, h } from './index-6a6fbfb5.js';
 
-const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTMLElement {
-  constructor() {
-    super();
-    this.__registerHost();
+const PixButton = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
     this.type = "button";
     this.size = 'big';
     this.shape = 'squircle';
@@ -57,35 +56,8 @@ const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTM
     "isTriggering": ["getIsLoading", "getIsDisabled", "updateClassNames"],
     "isDisabled": ["getIsDisabled", "updateClassNames"]
   }; }
-}, [6, "pix-button", {
-    "type": [1],
-    "size": [1],
-    "shape": [1],
-    "backgroundColor": [1, "background-color"],
-    "isBorderVisible": [4, "is-border-visible"],
-    "isDisabled": [4, "is-disabled"],
-    "isLoading": [4, "is-loading"],
-    "triggerAction": [16],
-    "isTriggering": [32],
-    "_triggerAction": [64]
-  }]);
-function defineCustomElement$1() {
-  if (typeof customElements === "undefined") {
-    return;
-  }
-  const components = ["pix-button"];
-  components.forEach(tagName => { switch (tagName) {
-    case "pix-button":
-      if (!customElements.get(tagName)) {
-        customElements.define(tagName, PixButton$1);
-      }
-      break;
-  } });
-}
+};
 
-const PixButton = PixButton$1;
-const defineCustomElement = defineCustomElement$1;
+export { PixButton as pix_button };
 
-export { PixButton, defineCustomElement };
-
-//# sourceMappingURL=pix-button.js.map
+//# sourceMappingURL=pix-button.entry.js.map

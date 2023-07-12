@@ -7,19 +7,29 @@
 
 ## Properties
 
-| Property     | Attribute     | Description     | Type      | Default     |
-| ------------ | ------------- | --------------- | --------- | ----------- |
-| `first`      | `first`       | The first name  | `string`  | `undefined` |
-| `isDisabled` | `is-disabled` | disable button  | `boolean` | `undefined` |
-| `last`       | `last`        | The last name   | `string`  | `undefined` |
-| `middle`     | `middle`      | The middle name | `string`  | `undefined` |
+| Property          | Attribute           | Description | Type       | Default      |
+| ----------------- | ------------------- | ----------- | ---------- | ------------ |
+| `backgroundColor` | `background-color`  |             | `string`   | `'blue'`     |
+| `isBorderVisible` | `is-border-visible` |             | `boolean`  | `false`      |
+| `isDisabled`      | `is-disabled`       |             | `boolean`  | `undefined`  |
+| `isLoading`       | `is-loading`        |             | `boolean`  | `undefined`  |
+| `shape`           | `shape`             |             | `string`   | `'squircle'` |
+| `size`            | `size`              |             | `string`   | `'big'`      |
+| `triggerAction`   | --                  |             | `Function` | `undefined`  |
+| `type`            | `type`              |             | `string`   | `"button"`   |
 
 
-## Events
+## Methods
 
-| Event   | Description | Type               |
-| ------- | ----------- | ------------------ |
-| `click` |             | `CustomEvent<any>` |
+### `_triggerAction(event: MouseEvent) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 
 ----------------------------------------------
