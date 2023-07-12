@@ -1,4 +1,4 @@
-import {Component, Prop, Method, h, Watch, State } from '@stencil/core';
+import {Component, Prop, Method, h, Watch, State, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'pix-button',
@@ -21,6 +21,8 @@ export class PixButton {
   @Prop() isDisabled: boolean;
 
   @Prop() isLoading: boolean;
+
+  @Prop() text: string;
 
   @Prop() triggerAction: Function;
 
@@ -72,7 +74,39 @@ export class PixButton {
     }
   }
 
+  // getTemplate() {
+  //   if(this.getIsLoading()) {
+  //     return (
+  //       <div>
+  //         <div class="loader loader--blue">
+  //         <div class="bounce1"></div>
+  //         <div class="bounce2"></div>
+  //         <div class="bounce3"></div>
+  //         </div>
+  //         <span class="loader__not-visible-text"><slot name="text"/></span>
+  //       </div>  
+  //     ) 
+  //   } 
+  //   return <slot name="text"/>
+  // }
+
   render() {
+    let template: any;
+    if(this.getIsLoading()) {
+      template = (
+        <Fragment>
+          <div class="loader loader--blue">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+          </div>
+          <span class="loader__not-visible-text">{this.text}</span>
+        </Fragment>  
+      ) 
+    } else {
+      template = <Fragment>{this.text}</Fragment>
+    }
+
     return (
       <button
         onClick={this._triggerAction.bind(this)}
@@ -81,11 +115,28 @@ export class PixButton {
         disabled={this.getIsDisabled()}
         aria-disabled={this.getIsDisabled()}
       >
-        <slot/>
+         {/* {this.getTemplate()}  */}
+          {template}
+         {/* <slot name="icon"/> */}
       </button>
-    );
+      )
+    }
   }
-}
+
+  // render() {
+  //   return (
+  //     <button
+  //       onClick={this._triggerAction.bind(this)}
+  //       type={this.type}
+  //       class={this.updateClassNames()}
+  //       disabled={this.getIsDisabled()}
+  //       aria-disabled={this.getIsDisabled()}
+  //     >
+  //       <slot/>
+  //     </button>
+  //   );
+  // }
+
 /*
 <button
   type={{this.type}}

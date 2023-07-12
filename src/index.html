@@ -10,18 +10,16 @@
     <script nomodule src="/build/pix-ui-webcomponents.js"></script>
   </head>
   <body>
-    <pix-button id="mon-button">
-      Coucou button
-    </pix-button>
-     <pix-button type="submit" id="mon-submit" background-color="green" shape="rounded">
-      Coucou submit
+     <pix-button type="submit" id="mon-submit" background-color="green" shape="rounded" text="Coucou">
+      <!-- <span slot="text">Coucou</span> -->
     </pix-button>
   <script>
-    const pixButton = document.querySelector('#mon-button');
+    const pixButton = document.querySelector('#mon-submit');
     pixButton.triggerAction = async () => {
-      await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000));
+      await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 30000));
     }
     pixButton.isDisabled = false;
+    // pixButton.isLoading = true;
     // pixButton.backgroundColor = 'green';
   </script>
   </body>
