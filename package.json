@@ -32,6 +32,10 @@
     "storybook-addon-themes": "^6.1.0",
     "vite": "^4.3.9"
   },
+  "workspaces": [
+    "themes/default-theme",
+    "themes/custom-theme"
+  ],
   "files": [
     "dist"
   ],

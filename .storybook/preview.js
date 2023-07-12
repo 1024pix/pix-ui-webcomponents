@@ -1,9 +1,13 @@
 /** @type { import('@storybook/html').Preview } */
-import createStyleTags from './createStyleTags';
-import cssVariablesTheme from '@etchteam/storybook-addon-css-variables-theme'
+import createStyleTags from "./createStyleTags";
+import cssVariablesTheme from "@etchteam/storybook-addon-css-variables-theme";
 
-const defaultTheme = createStyleTags('../themes/pix-theme-default.scss?inline');
-const plutoTheme = createStyleTags('../themes/pix-theme-pluto.scss?inline');
+const defaultTheme = createStyleTags(
+  "../themes/default-theme/pix-theme-default.scss?inline"
+);
+const plutoTheme = createStyleTags(
+  "../themes/custom-theme/pix-theme-pluto.scss?inline"
+);
 
 const preview = {
   parameters: {
@@ -16,13 +20,13 @@ const preview = {
     },
     cssVariables: {
       files: {
-        'Default Theme': defaultTheme,
-        'Pluto Theme': plutoTheme,
+        "Default Theme": defaultTheme,
+        "Pluto Theme": plutoTheme,
       },
-      defaultTheme: 'Default Theme'
-    }
+      defaultTheme: "Default Theme",
+    },
   },
-  decorators: [ cssVariablesTheme ]
+  decorators: [cssVariablesTheme],
 };
 
 export default preview;

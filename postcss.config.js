@@ -1,5 +1,5 @@
 import combine from "postcss-combine-duplicated-selectors";
 
 export default {
-  plugins: [combine({ removeDuplicatedProperties: false })],
+  plugins: [combine({ removeDuplicatedProperties: true })],
 };
