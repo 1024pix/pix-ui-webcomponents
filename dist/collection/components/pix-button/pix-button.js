@@ -31,8 +31,10 @@ export class PixButton {
   async _triggerAction(event) {
     console.log({ type: this.type });
     console.log('is it triggering ? ', this.isTriggering);
-    if (this.isDisabled || (this.type === 'submit' && !this.triggerAction))
+    if (this.isDisabled)
       return;
+    if (this.type === 'submit' && !this.triggerAction)
+      this._handleClick();
     if (!this.triggerAction) {
       throw new Error('@triggerAction params is required for PixButton !');
     }
@@ -44,6 +46,12 @@ export class PixButton {
     finally {
       console.log('triggering done ! ');
       this.isTriggering = false;
+    }
+  }
+  async _handleClick() {
+    const form = this.el.closest('form');
+    if (form) {
+      await form.requestSubmit();
     }
   }
   // getTemplate() {
@@ -261,9 +269,27 @@ export class PixButton {
           "text": "",
           "tags": []
         }
+      },
+      "_handleClick": {
+        "complexType": {
+          "signature": "() => Promise<void>",
+          "parameters": [],
+          "references": {
+            "Promise": {
+              "location": "global",
+              "id": "global::Promise"
+            }
+          },
+          "return": "Promise<void>"
+        },
+        "docs": {
+          "text": "",
+          "tags": []
+        }
       }
     };
   }
+  static get elementRef() { return "el"; }
   static get watchers() {
     return [{
         "propName": "isLoading",

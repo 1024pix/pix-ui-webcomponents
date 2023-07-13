@@ -21,6 +21,7 @@ export namespace Components {
         "middle": string;
     }
     interface PixButton {
+        "_handleClick": () => Promise<void>;
         "_triggerAction": (event: MouseEvent) => Promise<void>;
         "backgroundColor": string;
         "isBorderVisible": boolean;

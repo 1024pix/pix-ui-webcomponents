@@ -37,8 +37,10 @@ const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTM
   async _triggerAction(event) {
     console.log({ type: this.type });
     console.log('is it triggering ? ', this.isTriggering);
-    if (this.isDisabled || (this.type === 'submit' && !this.triggerAction))
+    if (this.isDisabled)
       return;
+    if (this.type === 'submit' && !this.triggerAction)
+      this._handleClick();
     if (!this.triggerAction) {
       throw new Error('@triggerAction params is required for PixButton !');
     }
@@ -50,6 +52,12 @@ const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTM
     finally {
       console.log('triggering done ! ');
       this.isTriggering = false;
+    }
+  }
+  async _handleClick() {
+    const form = this.el.closest('form');
+    if (form) {
+      await form.requestSubmit();
     }
   }
   // getTemplate() {
@@ -77,6 +85,7 @@ const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTM
     }
     return (h("button", { onClick: this._triggerAction.bind(this), type: this.type, class: this.updateClassNames(), disabled: this.getIsDisabled(), "aria-disabled": this.getIsDisabled() }, template));
   }
+  get el() { return this; }
   static get watchers() { return {
     "isLoading": ["getIsLoading", "getIsDisabled", "updateClassNames"],
     "isTriggering": ["getIsLoading", "getIsDisabled", "updateClassNames"],
@@ -93,7 +102,8 @@ const PixButton$1 = /*@__PURE__*/ proxyCustomElement(class PixButton extends HTM
     "isLoading": [4, "is-loading"],
     "triggerAction": [16],
     "isTriggering": [32],
-    "_triggerAction": [64]
+    "_triggerAction": [64],
+    "_handleClick": [64]
   }]);
 function defineCustomElement$1() {
   if (typeof customElements === "undefined") {

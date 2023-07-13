@@ -21,6 +21,16 @@
 
 ## Methods
 
+### `_handleClick() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 ### `_triggerAction(event: MouseEvent) => Promise<void>`
 
 

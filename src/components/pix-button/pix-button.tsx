@@ -1,4 +1,4 @@
-import {Component, Prop, Method, h, Watch, State, Fragment } from '@stencil/core';
+import {Component, Prop, Method, h, Watch, State, Fragment, Element } from '@stencil/core';
 
 @Component({
   tag: 'pix-button',
@@ -25,6 +25,8 @@ export class PixButton {
   @Prop() triggerAction: Function;
 
   @State() isTriggering: boolean = false;
+
+  @Element() el;
 
   @Watch('isLoading')
   @Watch('isTriggering')
@@ -57,7 +59,8 @@ export class PixButton {
   async _triggerAction(event: MouseEvent) {
     console.log({type: this.type});
     console.log('is it triggering ? ', this.isTriggering);
-    if (this.isDisabled || (this.type === 'submit' && !this.triggerAction)) return;
+    if (this.isDisabled) return;
+    if (this.type === 'submit' && !this.triggerAction) this._handleClick();
 
     if (!this.triggerAction) {
       throw new Error('@triggerAction params is required for PixButton !');
@@ -71,22 +74,13 @@ export class PixButton {
       this.isTriggering = false;
     }
   }
-
-  // getTemplate() {
-  //   if(this.getIsLoading()) {
-  //     return (
-  //       <div>
-  //         <div class="loader loader--blue">
-  //         <div class="bounce1"></div>
-  //         <div class="bounce2"></div>
-  //         <div class="bounce3"></div>
-  //         </div>
-  //         <span class="loader__not-visible-text"><slot name="text"/></span>
-  //       </div>
-  //     )
-  //   }
-  //   return <slot name="text"/>
-  // }
+  @Method()
+  async _handleClick() {
+    const form = this.el.closest('form');
+    if (form) {
+      await form.requestSubmit();
+    }
+  }
 
   render() {
     let template: any;

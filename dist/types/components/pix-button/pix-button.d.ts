@@ -8,9 +8,11 @@ export declare class PixButton {
   isLoading: boolean;
   triggerAction: Function;
   isTriggering: boolean;
+  el: any;
   private getIsLoading;
   private getIsDisabled;
   updateClassNames(): string;
   _triggerAction(event: MouseEvent): Promise<void>;
+  _handleClick(): Promise<void>;
   render(): any;
 }
