@@ -1,8 +1,6 @@
 import { LitElement, html, css, unsafeCSS, nothing } from 'lit';
 
-import style from "../colors.css?inline";
-import buttonBaseStyle from "../pix-button.css?inline";
-import buttonStyle from "../_pix-button.css?inline";
+import defaultStyles from "@1024pix/pix-ui-themes/dist/pix-theme-default.css";
 
 export class PixButton extends LitElement {
   static properties = {
@@ -39,14 +37,8 @@ export class PixButton extends LitElement {
   
   // Define scoped styles right with your component, in plain CSS
   static styles = [
-    unsafeCSS(style),
-    unsafeCSS(buttonBaseStyle),
-    unsafeCSS(buttonStyle),
-    css`
-    :host {
-      color: blue;
-    }
- `];
+    unsafeCSS(defaultStyles),
+ ];
 
   constructor() {
     super();
@@ -115,10 +107,10 @@ export class PixButton extends LitElement {
         <div class="bounce2"></div>
         <div class="bounce3"></div>
         </div>
-        <span class="loader__not-visible-text"><slot name="text"/></span>
+        <span class="loader__not-visible-text"><slot/></span>
       `
     } else {
-      template = html`<slot name="text"/>`
+      template = html`<slot/>`
     }
 
 

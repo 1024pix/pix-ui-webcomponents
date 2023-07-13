@@ -31,5 +31,8 @@
   "browserslist": [
     "> 1%",
     "Firefox ESR"
-  ]
+  ],
+  "devDependencies": {
+    "@1024pix/pix-ui-themes": "^1.0.0-beta"
+  }
 }
