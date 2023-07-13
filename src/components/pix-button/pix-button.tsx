@@ -2,9 +2,8 @@ import {Component, Prop, Method, h, Watch, State, Fragment, Element } from '@ste
 
 @Component({
   tag: 'pix-button',
-  styleUrl: 'pix-button.css',
+  styleUrl: '../../../node_modules/@1024pix/pix-ui-themes/dist/pix-theme-default.css',
   shadow: true,
-  // scoped: true,
 })
 export class PixButton {
 

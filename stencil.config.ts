@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'pix-ui-webcomponents',
-  globalStyle: 'src/global/global.css',
+  globalStyle: './node_modules/@1024pix/pix-ui-themes/dist/pix-theme-default.css',
   outputTargets: [
     {
       type: 'dist',
