@@ -1,14 +1,17 @@
 <script setup>
-import PixButton from './components/PixButton.vue'
+import './index.js'
 </script>
 
 <template>
   <form>
     <div>
-      <PixButton type="button">Button simple</PixButton>
+      <pix-button>Button par défaut</pix-button>
     </div>
     <div>
-      <PixButton type="submit">Button submit</PixButton>
+      <pix-button type="button">Button button</pix-button>
+    </div>
+    <div>
+      <pix-button type="submit">Button submit</pix-button>
     </div>
   </form>
 </template>
