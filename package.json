@@ -1,0 +1,20 @@
+{
+  "name": "@1024pix/pix-ui-webcomponents",
+  "version": "1.0.0",
+  "description": "Ce repo a été créé pour le Tech Time 2023. Il s'agit de créer des webcomponents compatibles avec tous les Frameworks et au-delà utilisés chez Pix.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1024pix/pix-ui-webcomponents.git"
+  },
+  "author": "Pix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1024pix/pix-ui-webcomponents/issues"
+  },
+  "homepage": "https://github.com/1024pix/pix-ui-webcomponents#readme"
+}
