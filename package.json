@@ -2,8 +2,8 @@
   "name": "@1024pix/pix-ui-webcomponents",
   "version": "1.0.0",
   "description": "Ce repo a été créé pour le Tech Time 2023. Il s'agit de créer des webcomponents compatibles avec tous les Frameworks et au-delà utilisés chez Pix.",
-  "main": "./dist/pix-ui.js",
-  "module": "./dist/pix-ui.umd.cjs",
+  "module": "dist/pix-ui.js",
+  "main": "dist/pix-ui.umd.cjs",
   "type": "module",
   "scripts": {
     "dev": "vite",
