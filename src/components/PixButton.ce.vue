@@ -12,7 +12,7 @@ const isLoadingOrTriggering = computed(() => {
 
 const updateClassNames = computed(() => {
   isBorderVisible.value && classNames.value.push('pix-button--border');
-  getIsDisabled && classNames.value.push('pix-button--disabled');
+  //getIsDisabled && classNames.value.push('pix-button--disabled');
   return classNames.value.join(' ');
 })
 
@@ -107,8 +107,5 @@ function _handleClick() {
 </template>
 
 <style>
-@import '@1024pix/pix-ui-themes/dist/pix-theme-pluto.css';
-  button {
-    background-color: red;
-  }
+@import '@1024pix/pix-ui-themes/dist/pix-theme-default.css';
 </style>

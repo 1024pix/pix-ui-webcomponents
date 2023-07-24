@@ -8,10 +8,10 @@ import './index.js'
       <pix-button>Button par défaut</pix-button>
     </div>
     <div>
-      <pix-button type="button">Button button</pix-button>
+      <pix-button type="button" backgroundColor="green">Button button</pix-button>
     </div>
     <div>
-      <pix-button type="submit">Button submit</pix-button>
+      <pix-button type="submit" backgroundColor="green">Button submit</pix-button>
     </div>
   </form>
 </template>
