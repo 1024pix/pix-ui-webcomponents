@@ -21,11 +21,5 @@ export default defineConfig({
   },
   polyfills: [
     '@webcomponents/webcomponentsjs'
-  ],
-  exports: {
-    '.': {
-      'import': './dist/pix-ui.js',
-      'require': './dist/pix-ui.umd.cjs'
-    }
-  }
+  ]
 })

@@ -17,5 +17,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1024pix/pix-ui-webcomponents.git"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/pix-ui.js",
+      "require": "./dist/pix-ui.umd.cjs"
+    }
   }
 }
