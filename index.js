@@ -1,3 +1,1 @@
-import { PixButton } from "./webcomponents/PixButton.js";
-
-export { PixButton };
+export { PixButton } from "./webcomponents/PixButton.js";

@@ -2,7 +2,8 @@
   "name": "@1024pix/pix-ui-webcomponents",
   "version": "1.0.0",
   "description": "Ce repo a été créé pour le Tech Time 2023. Il s'agit de créer des webcomponents compatibles avec tous les Frameworks et au-delà utilisés chez Pix.",
-  "main": "index.js",
+  "main": "./dist/pix-ui.js",
+  "module": "./dist/pix-ui.umd.cjs",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,9 +11,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.22.6",
+    "@babel/preset-env": "^7.22.6",
     "@webcomponents/webcomponentsjs": "^2.8.0",
     "lit": "^2.7.5",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vite-plugin-babel": "^1.1.3"
   },
   "repository": {
     "type": "git",
@@ -23,5 +27,9 @@
       "import": "./dist/pix-ui.js",
       "require": "./dist/pix-ui.umd.cjs"
     }
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "Firefox ESR"
+  ]
 }

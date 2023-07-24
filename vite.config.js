@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url';
 import { resolve } from 'node:path';
 
 import { defineConfig } from 'vite';
+import babel from 'vite-plugin-babel';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,14 +13,28 @@ export default defineConfig({
       // the proper extensions will be added
       fileName: 'pix-ui',
     },
-    //target:
   },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  polyfills: [
-    '@webcomponents/webcomponentsjs'
+  plugins: [
+    babel({
+        extensions: ['.js'],
+        babelHelpers: 'runtime',
+        plugins: ['@babel/plugin-transform-runtime'],
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              useBuiltIns: false,
+              targets: {
+                browsers: ['last 2 versions', '> 1%', 'not ie <= 11', 'Firefox ESR', 'Firefox 58'],
+              },
+            },
+          ],
+        ],
+    }),
   ]
 })
