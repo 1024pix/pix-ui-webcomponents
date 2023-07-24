@@ -1,6 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
-import '@1024pix/pix-ui-themes/dist/pix-theme-default.css';
+import { ref, onMounted, computed } from 'vue';
 
 const getIsDisabled = computed(() => {
   return isLoadingOrTriggering || isDisabled.value;
@@ -21,8 +20,8 @@ const isLoading = ref(false);
 const isTriggering = ref(false);
 const icon = ref('');
 const isBorderVisible = ref(true);
-const triggerAction = ref(Function);
 const isDisabled = ref(false);
+let hostNode;
 
 const props = defineProps({
   type: {
@@ -43,6 +42,10 @@ const props = defineProps({
   },
 });
 
+onMounted(() => {
+  hostNode = button.value.getRootNode().host;
+});
+
 const classNames = ref([
   'pix-button',
   `pix-button--shape-${props.shape}`,
@@ -55,22 +58,27 @@ async function isSettingTimeOut () {
   isDisabled.value = false
 }
 
-async function _triggerAction(event) {
+async function handleTriggerAction(event) {
   if (isDisabled.value) {
     console.log('isDisabled.value', isDisabled.value);
     return;
   }
 
-  if (props.type === 'submit' && !triggerAction.value) _handleClick();
+    console.log({propsType: props.type})
+  if (props.type === 'submit') {
+    console.log('Ready to handleClick')
+    _handleClick();
+    return;
+  }
 
-  if (!triggerAction.value) {
-    throw new Error('@triggerAction params is required for PixButton !');
+  if (!props.triggerAction) {
+    throw new Error('triggerAction param is required with type "button"');
   }
   try {
     isTriggering.value = true;
-    console.log('when triggered !', triggerAction.value);
+    console.log('when triggered !', props.triggerAction);
     console.log('isDisabled.value', isDisabled.value);
-    await triggerAction.value;
+    await props.triggerAction;
     await isSettingTimeOut();
   } finally {
     console.log('triggering done ! ');
@@ -78,9 +86,13 @@ async function _triggerAction(event) {
   }
 }
 
-function _handleClick() {
-  button.value.getRootNode().host.closest('form')
-  .dispatchEvent(new Event('submit', {cancelable: true}));
+function handleClick(event) {
+  console.log('handleClick', event)
+  console.log({hostNode})
+  console.log({root: hostNode.getRootNode()})
+  if (props.type === 'submit') {
+    hostNode.closest('form').dispatchEvent(new Event('submit', {cancelable: true}));
+  }
 }
 </script>
 
@@ -88,7 +100,7 @@ function _handleClick() {
   <button
     ref="button"
     :type="type"
-    @click="_triggerAction"
+    @click="handleClick"
     :class="updateClassNames"
   >
     <div v-if="isLoadingOrTriggering">

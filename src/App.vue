@@ -1,5 +1,9 @@
 <script setup>
 import './index.js'
+
+function myClickFunction() {
+  window.alert('This is myClickFunction')
+}
 </script>
 
 <template>
@@ -8,7 +12,7 @@ import './index.js'
       <pix-button>Button par défaut</pix-button>
     </div>
     <div>
-      <pix-button type="button" backgroundColor="green">Button button</pix-button>
+      <pix-button type="button" backgroundColor="green" @click="myClickFunction">Button button</pix-button>
     </div>
     <div>
       <pix-button type="submit" backgroundColor="green">Button submit</pix-button>
