@@ -18,7 +18,6 @@ export default defineConfig({
 
   plugins: [
     vue({
-      customElement: true,
       template: {
         compilerOptions:
           {

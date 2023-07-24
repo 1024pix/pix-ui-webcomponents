@@ -1,9 +1,9 @@
 
 import { defineCustomElement } from 'vue';
 
-import PixButton from './components/PixButton.vue';
+import PixButton from './components/PixButton.ce.vue';
 
-const PixButtonWebComponent = defineCustomElement(PixButton);
-window.customElements.define('pix-button', PixButtonWebComponent);
+const PixButtonElement = defineCustomElement(PixButton);
+customElements.define('pix-button', PixButtonElement);
 
-export { PixButtonWebComponent as 'PixButton' };
+export { PixButtonElement as 'PixButton' };
