@@ -1,10 +1,26 @@
+dist/
+www/
+loader/
 
-**/node_modules
+*~
+*.sw[mnpcod]
+*.log
+*.lock
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
 
-.idea
+.stencil/
+.idea/
+.vscode/
+.sass-cache/
+.versions/
+node_modules/
+$RECYCLE.BIN/
 
-.vite
-.stencil
-
-www
-
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+.env
