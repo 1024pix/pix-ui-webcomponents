@@ -1,70 +1,74 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed } from 'vue'
 
+/*
 const getIsDisabled = computed(() => {
-  return isLoadingOrTriggering || isDisabled.value;
+  return isLoadingOrTriggering.value || isDisabled.value
 })
+*/
 
 const isLoadingOrTriggering = computed(() => {
-    return isLoading.value || isTriggering.value;
+  return isLoading.value || isTriggering.value
 })
 
 const updateClassNames = computed(() => {
-  isBorderVisible.value && classNames.value.push('pix-button--border');
+  isBorderVisible.value && classNames.value.push('pix-button--border')
   //getIsDisabled && classNames.value.push('pix-button--disabled');
-  return classNames.value.join(' ');
+  return classNames.value.join(' ')
 })
 
-const button = ref();
-const isLoading = ref(false);
-const isTriggering = ref(false);
-const icon = ref('');
-const isBorderVisible = ref(true);
-const isDisabled = ref(false);
-let hostNode;
+const button = ref()
+const isLoading = ref(false)
+const isTriggering = ref(false)
+//const icon = ref('')
+const isBorderVisible = ref(true)
+//const isDisabled = ref(false)
+let hostNode
 
 const props = defineProps({
   type: {
     type: String,
-    default: "button"
+    default: 'button'
   },
-  shape: { 
+  shape: {
     type: String,
-    default: "squircle"
+    default: 'squircle'
   },
   size: {
     type: String,
-    default: "big"
+    default: 'big'
   },
   backgroundColor: {
     type: String,
-    default: "blue"
-  },
-});
+    default: 'blue'
+  }
+})
 
 onMounted(() => {
-  hostNode = button.value.getRootNode().host;
-});
+  hostNode = button.value.getRootNode().host
+})
 
 const classNames = ref([
   'pix-button',
   `pix-button--shape-${props.shape}`,
   `pix-button--size-${props.size}`,
-  `pix-button--background-${props.backgroundColor}`,
-]);
+  `pix-button--background-${props.backgroundColor}`
+])
 
-async function isSettingTimeOut () {
-  await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000));
+/*
+async function isSettingTimeOut() {
+  await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000))
   isDisabled.value = false
 }
+*/
 
+/*
 async function handleTriggerAction(event) {
   if (isDisabled.value) {
     console.log('isDisabled.value', isDisabled.value);
     return;
   }
 
-    console.log({propsType: props.type})
   if (props.type === 'submit') {
     console.log('Ready to handleClick')
     _handleClick();
@@ -76,8 +80,6 @@ async function handleTriggerAction(event) {
   }
   try {
     isTriggering.value = true;
-    console.log('when triggered !', props.triggerAction);
-    console.log('isDisabled.value', isDisabled.value);
     await props.triggerAction;
     await isSettingTimeOut();
   } finally {
@@ -85,31 +87,26 @@ async function handleTriggerAction(event) {
     isTriggering.value = false;
   }
 }
+*/
 
 function handleClick(event) {
   console.log('handleClick', event)
-  console.log({hostNode})
-  console.log({root: hostNode.getRootNode()})
+  console.log({ hostNode })
   if (props.type === 'submit') {
-    hostNode.closest('form').dispatchEvent(new Event('submit', {cancelable: true}));
+    hostNode.closest('form').dispatchEvent(new Event('submit', { cancelable: true }))
   }
 }
 </script>
 
 <template>
-  <button
-    ref="button"
-    :type="type"
-    @click="handleClick"
-    :class="updateClassNames"
-  >
+  <button ref="button" :type="type" @click="handleClick" :class="updateClassNames">
     <div v-if="isLoadingOrTriggering">
       <div className="loader loader--blue">
         <div className="bounce1"></div>
         <div className="bounce2"></div>
         <div className="bounce3"></div>
       </div>
-      <span className="loader__not-visible-text"><slot/></span>
+      <span className="loader__not-visible-text"><slot /></span>
     </div>
     <div v-else>
       <slot />
