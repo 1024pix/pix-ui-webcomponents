@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
     <script type="module" src="./index.js"></script>
-</head>
-<body>
-<pix-button id="mon-button" >
-  coucou
-</pix-button>
-</body>
-<script>
-  const pixButton = document.querySelector('#mon-button');
-  pixButton.triggerAction = async () => {
-    await new Promise((resolve) => setTimeout(() => resolve(console.log('ici')), 3000000));
-  }
-  pixButton.isDisabled = false;
-  // pixButton.isLoading = true;
-  pixButton.icon = 'true';
-</script>
+  </head>
+  <body>
+    <pix-button id="mon-button"> coucou </pix-button>
+  </body>
+  <script>
+    const pixButton = document.querySelector('#mon-button');
+    pixButton.icon = 'true';
+
+    pixButton.addEventListener('PixClick', (event) => {
+      console.log('pix click', event.target);
+    });
+  </script>
 </html>

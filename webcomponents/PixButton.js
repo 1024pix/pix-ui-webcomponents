@@ -1,60 +1,58 @@
 import { LitElement, html, css, unsafeCSS, nothing } from 'lit';
 
-import defaultStyles from "@1024pix/pix-ui-themes/dist/pix-theme-default.css";
+import defaultStyles from '@1024pix/pix-ui-themes/dist/pix-theme-default.css';
 
 export class PixButton extends LitElement {
   static properties = {
-   type: {
-     type: String,
-     reflect: true
-   } ,
-   size: {
-     type: String,
-     reflect: true
-   },
-   shape: {
-     type: String,
-     reflect: true
-   },
-   backgroundColor: {
-     type: String,
-     reflect: true
-   },
-   isBorderVisible: {
-     type: Boolean,
-     reflect: true
-   },
-   isDisabled: {
-     type: Boolean,
-     reflect: true
-   },
-   isLoading: {type: Boolean, reflect: true},
-   icon: {type: String, reflect: true},
-   triggerAction: {type: Object, reflect: true},
-   isTriggering: {type: Boolean},
-   classNames: {type: Array},
+    type: {
+      type: String,
+      reflect: true,
+    },
+    size: {
+      type: String,
+      reflect: true,
+    },
+    shape: {
+      type: String,
+      reflect: true,
+    },
+    backgroundColor: {
+      type: String,
+      reflect: true,
+    },
+    isBorderVisible: {
+      type: Boolean,
+      reflect: true,
+    },
+    isDisabled: {
+      type: Boolean,
+      reflect: true,
+    },
+    isLoading: { type: Boolean, reflect: true },
+    icon: { type: String, reflect: true },
+    triggerAction: { type: Object, reflect: true },
+    isTriggering: { type: Boolean },
+    classNames: { type: Array },
   };
-  
+
   // Define scoped styles right with your component, in plain CSS
-  static styles = [
-    unsafeCSS(defaultStyles),
- ];
+  static styles = [unsafeCSS(defaultStyles)];
 
   constructor() {
     super();
-  this.type = "button";
+    this.type = 'button';
 
-  this.size = 'big';
+    this.size = 'big';
 
-  this.shape = 'squircle';
+    this.shape = 'squircle';
 
-  this.backgroundColor = 'blue'
+    this.backgroundColor = 'blue';
 
-  this.isBorderVisible = false;
+    this.isBorderVisible = false;
 
-  this.boolean = false;
+    this.boolean = false;
 
-  this.classNames = [
+    this.classNames = [
       'pix-button',
       `pix-button--shape-${this.shape}`,
       `pix-button--size-${this.size}`,
@@ -86,7 +84,12 @@ export class PixButton extends LitElement {
     if (this.isDisabled || (this.type === 'submit' && !this.triggerAction)) return;
 
     if (!this.triggerAction) {
-      throw new Error('@triggerAction params is required for PixButton !');
+      const event = new CustomEvent('PixClick', {
+        bubbles: false,
+        composed: false,
+      });
+      this.dispatchEvent(event);
+      return;
     }
     try {
       this.isTriggering = true;
@@ -99,7 +102,7 @@ export class PixButton extends LitElement {
   }
   // Render the UI as a function of component state
   render() {
-   let template;
+    let template;
     if (this.isLoadingOrTriggering) {
       template = html`
         <div class="loader loader--blue">
@@ -108,11 +111,10 @@ export class PixButton extends LitElement {
         <div class="bounce3"></div>
         </div>
         <span class="loader__not-visible-text"><slot/></span>
-      `
+      `;
     } else {
-      template = html`<slot/>`
+      template = html`<slot/>`;
     }
-
 
     return html`<button
         @click=${this._triggerAction}
@@ -123,8 +125,7 @@ export class PixButton extends LitElement {
       >
         ${template} 
         <slot name="icon"></slot>
-    </button>`
-
+    </button>`;
   }
 }
 
