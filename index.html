@@ -17,5 +17,9 @@
     pixButton.addEventListener('PixClick', (event) => {
       console.log('pix click', event.target);
     });
+
+    pixQcm.addEventListener('PixFruitsQcmChanges', (event) => {
+      console.log('pix checked', event.detail);
+    });
   </script>
 </html>
